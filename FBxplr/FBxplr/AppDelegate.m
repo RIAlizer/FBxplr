@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "DCIntrospect.h"
 
 @implementation AppDelegate
 
@@ -28,6 +29,11 @@
 {
     
     [[AppManager sharedInstance] initAppData:self.window];
+
+    // always call after makeKeyAndDisplay.
+#if TARGET_IPHONE_SIMULATOR
+    [[DCIntrospect sharedIntrospector] start];
+#endif
     
 #ifdef DEBUG_ON_SCREEN
     #if DEBUG_ON_SCREEN
