@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>6082FEA8-1EC9-405E-B184-5D660A76B6B0</string>
+	<key>IDESourceControlProjectName</key>
+	<string>FBxplr</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1DC6A966-F37E-46B7-B566-B92C0B8CEFAF</key>
+		<string>https://github.com/RIAlizer/FBxplr.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>FBxplr.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1DC6A966-F37E-46B7-B566-B92C0B8CEFAF</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/RIAlizer/FBxplr.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1DC6A966-F37E-46B7-B566-B92C0B8CEFAF</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1DC6A966-F37E-46B7-B566-B92C0B8CEFAF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>FBxplr</string>
+		</dict>
+	</array>
+</dict>
+</plist>
