@@ -7,11 +7,11 @@
 //
 
 #import "KVCUtils.h"
-#import "NSDate+Helper.h"
+
 
 @implementation KVCUtils
 
-
+/*
 +(NSDate*)dateFrom:(NSDictionary*)dictionary forKey:(NSString*)key
 {
     NSDate* retval =nil;
@@ -23,7 +23,7 @@
         
     }
     return retval;
-}
+}*/
 +(NSString*)stringFrom:(NSDictionary*)dictionary forKey:(NSString*)key
 {
     NSString* retval =nil;

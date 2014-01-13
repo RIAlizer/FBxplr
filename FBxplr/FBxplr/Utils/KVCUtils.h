@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
-#import "NSObject+Properties.h"
+
 
 @interface KVCUtils : NSObject
 
