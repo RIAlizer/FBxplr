@@ -14,3 +14,5 @@ pod "AFNetworking", "~> 2.0"
 pod 'Reachability', '~> 3.1.0'
 
 pod 'Facebook-iOS-SDK', '~> 3.11.0'
+
+pod 'TPKeyboardAvoiding', '~> 1.2.1'

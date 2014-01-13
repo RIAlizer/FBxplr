@@ -26,7 +26,13 @@ All these libraries are essential for advanced iOS development
 <code>pod 'Reachability', '~> 3.1.0'</code> 
 
 * [**Facebook-iOS-SDK**](https://developers.facebook.com/docs/ios/) The iOS SDK provides Facebook Platform support for iOS apps.<br>
-<code>pod 'Facebook-iOS-SDK', '~> 3.11.0'</code> 
+<code>pod 'Facebook-iOS-SDK', '~> 3.11.0'</code>
+
+* [**TPKeyboardAvoiding**](https://github.com/michaeltyson/TPKeyboardAvoiding) A drop-in universal solution for moving text fields out of the way of the keyboard in iOS..<br>
+<code>pod 'TPKeyboardAvoiding', '~> 1.2.1'</code>
+
+
+ 
 ----
 ### Features
 * Universal App (iPhone/iPad)

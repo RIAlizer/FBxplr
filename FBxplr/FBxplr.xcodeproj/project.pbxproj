@@ -34,6 +34,15 @@
 		3A59FD4F1883A7C10078AE67 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 919C961D60A644F3A8C506C0 /* libPods.a */; };
 		3A59FD511883A7C10078AE67 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3AA329CC18839EFC00548901 /* InfoPlist.strings */; };
 		3A59FD521883A7C10078AE67 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AA329D818839EFC00548901 /* Images.xcassets */; };
+		3A59FD651883AA760078AE67 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A59FD631883AA760078AE67 /* LoginViewController.m */; };
+		3A59FD661883AA760078AE67 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A59FD631883AA760078AE67 /* LoginViewController.m */; };
+		3A59FD671883AA760078AE67 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A59FD631883AA760078AE67 /* LoginViewController.m */; };
+		3A59FD681883AA760078AE67 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A59FD641883AA760078AE67 /* LoginViewController.xib */; };
+		3A59FD691883AA760078AE67 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A59FD641883AA760078AE67 /* LoginViewController.xib */; };
+		3A59FD6A1883AA760078AE67 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A59FD641883AA760078AE67 /* LoginViewController.xib */; };
+		3A59FD6E1883AAA70078AE67 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A59FD6D1883AAA70078AE67 /* BaseViewController.m */; };
+		3A59FD6F1883AAA70078AE67 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A59FD6D1883AAA70078AE67 /* BaseViewController.m */; };
+		3A59FD701883AAA70078AE67 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A59FD6D1883AAA70078AE67 /* BaseViewController.m */; };
 		3AA329C218839EFC00548901 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AA329C118839EFC00548901 /* Foundation.framework */; };
 		3AA329C418839EFC00548901 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AA329C318839EFC00548901 /* CoreGraphics.framework */; };
 		3AA329C618839EFC00548901 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AA329C518839EFC00548901 /* UIKit.framework */; };
@@ -100,6 +109,11 @@
 		0DCD06ABB2274F9188B88189 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		3A59FD571883A7C10078AE67 /* FBxplr copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FBxplr copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A59FD591883A7FA0078AE67 /* FBxplrARC-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FBxplrARC-Info.plist"; sourceTree = "<group>"; };
+		3A59FD621883AA760078AE67 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		3A59FD631883AA760078AE67 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		3A59FD641883AA760078AE67 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		3A59FD6C1883AAA70078AE67 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		3A59FD6D1883AAA70078AE67 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		3AA329BE18839EFC00548901 /* FBxplr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FBxplr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AA329C118839EFC00548901 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3AA329C318839EFC00548901 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -199,6 +213,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A59FD5A1883A9A00078AE67 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3A59FD6B1883AAA60078AE67 /* base */,
+				3A59FD621883AA760078AE67 /* LoginViewController.h */,
+				3A59FD631883AA760078AE67 /* LoginViewController.m */,
+				3A59FD641883AA760078AE67 /* LoginViewController.xib */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3A59FD6B1883AAA60078AE67 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				3A59FD6C1883AAA70078AE67 /* BaseViewController.h */,
+				3A59FD6D1883AAA70078AE67 /* BaseViewController.m */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
 		3AA329B518839EFC00548901 = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +270,7 @@
 		3AA329C918839EFC00548901 /* FBxplr */ = {
 			isa = PBXGroup;
 			children = (
+				3A59FD5A1883A9A00078AE67 /* ViewControllers */,
 				3AA32A5A18839FA000548901 /* Data */,
 				3AA329F618839F3E00548901 /* Utils */,
 				3AA329D218839EFC00548901 /* AppDelegate.h */,
@@ -501,6 +536,7 @@
 			files = (
 				3A59FD511883A7C10078AE67 /* InfoPlist.strings in Resources */,
 				3A59FD521883A7C10078AE67 /* Images.xcassets in Resources */,
+				3A59FD6A1883AA760078AE67 /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,6 +546,7 @@
 			files = (
 				3AA329CE18839EFC00548901 /* InfoPlist.strings in Resources */,
 				3AA329D918839EFC00548901 /* Images.xcassets in Resources */,
+				3A59FD681883AA760078AE67 /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,6 +554,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A59FD691883AA760078AE67 /* LoginViewController.xib in Resources */,
 				3AA329EB18839EFC00548901 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -602,7 +640,9 @@
 				3A59FD3B1883A7C10078AE67 /* UIViewController+Container.m in Sources */,
 				3A59FD3C1883A7C10078AE67 /* AppManager.m in Sources */,
 				3A59FD3E1883A7C10078AE67 /* CustomUIApplication.mm in Sources */,
+				3A59FD671883AA760078AE67 /* LoginViewController.m in Sources */,
 				3A59FD3F1883A7C10078AE67 /* UIView+Positioning.m in Sources */,
+				3A59FD701883AAA70078AE67 /* BaseViewController.m in Sources */,
 				3A59FD411883A7C10078AE67 /* AppDelegate.m in Sources */,
 				3A59FD421883A7C10078AE67 /* NSMutableArray+Shuffle.m in Sources */,
 				3A59FD431883A7C10078AE67 /* FBxplr.xcdatamodeld in Sources */,
@@ -629,7 +669,9 @@
 				3AA32A5018839F3F00548901 /* UIViewController+Container.m in Sources */,
 				3AA32A6018839FA000548901 /* AppManager.m in Sources */,
 				3AA32A5818839F3F00548901 /* CustomUIApplication.mm in Sources */,
+				3A59FD651883AA760078AE67 /* LoginViewController.m in Sources */,
 				3AA32A4A18839F3F00548901 /* UIView+Positioning.m in Sources */,
+				3A59FD6E1883AAA70078AE67 /* BaseViewController.m in Sources */,
 				3AA329D418839EFC00548901 /* AppDelegate.m in Sources */,
 				3AA32A3218839F3F00548901 /* NSMutableArray+Shuffle.m in Sources */,
 				3AA329D718839EFC00548901 /* FBxplr.xcdatamodeld in Sources */,
@@ -646,6 +688,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AA32A6B1883A11600548901 /* NSMutableAttributedString+Attributes.m in Sources */,
+				3A59FD6F1883AAA70078AE67 /* BaseViewController.m in Sources */,
 				3AA32A4B18839F3F00548901 /* UIView+Positioning.m in Sources */,
 				3AA32A4318839F3F00548901 /* UIImage+Optimize.m in Sources */,
 				3AA32A5918839F3F00548901 /* CustomUIApplication.mm in Sources */,
@@ -660,6 +703,7 @@
 				3AA32A3F18839F3F00548901 /* UIColor+Hex.m in Sources */,
 				3AA32A4518839F3F00548901 /* UIImage+Resize.m in Sources */,
 				3AA32A4918839F3F00548901 /* UIView+Animation.m in Sources */,
+				3A59FD661883AA760078AE67 /* LoginViewController.m in Sources */,
 				3AA32A6118839FA000548901 /* AppManager.m in Sources */,
 				3AA32A5718839F3F00548901 /* KVCUtils.m in Sources */,
 				3AA32A3918839F3F00548901 /* NSDictionary+UrlEncoding.m in Sources */,
@@ -705,7 +749,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FBxplr/FBxplr-Prefix.pch";
-				INFOPLIST_FILE = "FBxplrARC-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/FBxplr/FBxplrARC-Info.plist";
 				PRODUCT_NAME = "FBxplr copy";
 				WRAPPER_EXTENSION = app;
 			};
@@ -720,7 +764,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FBxplr/FBxplr-Prefix.pch";
-				INFOPLIST_FILE = "FBxplrARC-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/FBxplr/FBxplrARC-Info.plist";
 				PRODUCT_NAME = "FBxplr copy";
 				WRAPPER_EXTENSION = app;
 			};
