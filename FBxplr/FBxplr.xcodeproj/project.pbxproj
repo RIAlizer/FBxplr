@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A549A131883B76B0022410C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A549A161883B76B0022410C /* Localizable.strings */; };
+		3A549A141883B76B0022410C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A549A161883B76B0022410C /* Localizable.strings */; };
 		3A59FD321883A7C10078AE67 /* UIView+Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA32A1618839F3E00548901 /* UIView+Animation.m */; };
 		3A59FD341883A7C10078AE67 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA32A0A18839F3E00548901 /* UIColor+Hex.m */; };
 		3A59FD351883A7C10078AE67 /* UIView+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA32A1C18839F3E00548901 /* UIView+Size.m */; };
@@ -107,6 +109,8 @@
 
 /* Begin PBXFileReference section */
 		0DCD06ABB2274F9188B88189 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		3A549A151883B76B0022410C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3A549A171883B7EB0022410C /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3A59FD571883A7C10078AE67 /* FBxplr copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FBxplr copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A59FD591883A7FA0078AE67 /* FBxplrARC-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FBxplrARC-Info.plist"; sourceTree = "<group>"; };
 		3A59FD621883AA760078AE67 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -290,6 +294,7 @@
 				3AA329CC18839EFC00548901 /* InfoPlist.strings */,
 				3AA329CF18839EFC00548901 /* main.m */,
 				3AA329D118839EFC00548901 /* FBxplr-Prefix.pch */,
+				3A549A161883B76B0022410C /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -516,6 +521,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				it,
 			);
 			mainGroup = 3AA329B518839EFC00548901;
 			productRefGroup = 3AA329BF18839EFC00548901 /* Products */;
@@ -535,6 +541,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A59FD511883A7C10078AE67 /* InfoPlist.strings in Resources */,
+				3A549A141883B76B0022410C /* Localizable.strings in Resources */,
 				3A59FD521883A7C10078AE67 /* Images.xcassets in Resources */,
 				3A59FD6A1883AA760078AE67 /* LoginViewController.xib in Resources */,
 			);
@@ -545,6 +552,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AA329CE18839EFC00548901 /* InfoPlist.strings in Resources */,
+				3A549A131883B76B0022410C /* Localizable.strings in Resources */,
 				3AA329D918839EFC00548901 /* Images.xcassets in Resources */,
 				3A59FD681883AA760078AE67 /* LoginViewController.xib in Resources */,
 			);
@@ -721,6 +729,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		3A549A161883B76B0022410C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A549A151883B76B0022410C /* en */,
+				3A549A171883B7EB0022410C /* it */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		3AA329CC18839EFC00548901 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -47,9 +47,27 @@
 
 -(void)setupUI
 {
+    /*
+    NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray* languages = [userDefaults objectForKey:@"AppleLanguages"];
+    [languages insertObject:@"it" atIndex:0]; // ISO639-1
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    */
     self.navigationController.navigationItem.title = LSTR(@"Login");
     self.loginButtonView.delegate = self;
-    self.loginButtonView.readPermissions = @[@"basic_info", @"email", @"user_likes", @"read_friendlists"];
+    
+    NSArray *permissions = @[
+                            @"user_likes",
+                            @"read_stream",
+                            @"email",
+                            @"user_location",
+                            @"user_hometown",
+                            @"user_about_me",
+                            @"user_birthday",
+                            @"user_events"];
+    
+    
+    self.loginButtonView.readPermissions = permissions;
     
     self.profilePictureView.backgroundColor = [UIColor clearColor];
     
@@ -63,7 +81,7 @@
 - (void)loginViewFetchedUserInfo:(FBLoginView *)loginView
                             user:(id<FBGraphUser>)user {
     self.profilePictureView.profileID = user.id;
-    self.labelName.text = user.name;
+    self.labelName.text = [NSString stringWithFormat:LSTR(@"Welcome %@"),user.name];
 }
 
 

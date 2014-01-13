@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  FBxplr
+
+  Created by andrea gonteri on 13/01/14.
+  Copyright (c) 2014 rializer. All rights reserved.
+*/
+
+"Welcome %@" = "Benvenuto %@";
+"Login" = "Accedi";
