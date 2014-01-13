@@ -18,7 +18,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hpj-wr-AvW" customClass="FBLoginView">
-                    <rect key="frame" x="60" y="462" width="200" height="44"/>
+                    <rect key="frame" x="55" y="423" width="200" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
@@ -28,7 +28,7 @@
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y91-dJ-0ik">
-                    <rect key="frame" x="65" y="407" width="195" height="37"/>
+                    <rect key="frame" x="60" y="385" width="195" height="37"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>

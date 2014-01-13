@@ -56,6 +56,7 @@
     self.navigationController.navigationItem.title = LSTR(@"Login");
     self.loginButtonView.delegate = self;
     
+    /*
     NSArray *permissions = @[
                             @"user_likes",
                             @"read_stream",
@@ -65,7 +66,8 @@
                             @"user_about_me",
                             @"user_birthday",
                             @"user_events"];
-    
+    */
+    NSArray *permissions =@[@"basic_info", @"email", @"user_likes"];
     
     self.loginButtonView.readPermissions = permissions;
     
