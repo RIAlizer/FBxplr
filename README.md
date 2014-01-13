@@ -27,3 +27,11 @@ All these libraries are essential for advanced iOS development
 
 * [**Facebook-iOS-SDK**](https://developers.facebook.com/docs/ios/) The iOS SDK provides Facebook Platform support for iOS apps.<br>
 <code>pod 'Facebook-iOS-SDK', '~> 3.11.0'</code> 
+----
+### Features
+* Universal App (iPhone/iPad)
+* Facebook Login Auth
+* CoreData Integration
+* Works automagically on ARC and non-ARC enviroment - more info [Utils/DevDefines.h](https://github.com/RIAlizer/ios_test/blob/master/project/YakimbiIosTest/YakimbiIosTest/Utils/DevDefines.h "DevDefines.h")  
+	* Target FBxplr for non-ARC
+	* Target FBxplrARC is ARC enable (TODO)
