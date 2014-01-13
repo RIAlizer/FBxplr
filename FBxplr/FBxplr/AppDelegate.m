@@ -7,9 +7,12 @@
 //
 
 #import "AppDelegate.h"
+#import "LoginViewController.h"
 #import "DCIntrospect.h"
 
 @implementation AppDelegate
+
+@synthesize window = _window;
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
@@ -20,20 +23,30 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    [self initApplication];
+    
+    LoginViewController * loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+    UINavigationController * mainNavigationController  = [[UINavigationController alloc] initWithRootViewController:loginViewController];
+    RELEASE_OBJ(loginViewController);
+    self.window.rootViewController = mainNavigationController;
+    RELEASE_OBJ(mainNavigationController);
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
 
 
--(void)initApp
+-(void)initApplication
 {
     
     [[AppManager sharedInstance] initAppData:self.window];
-
+/*
     // always call after makeKeyAndDisplay.
 #if TARGET_IPHONE_SIMULATOR
     [[DCIntrospect sharedIntrospector] start];
 #endif
+    */
     
 #ifdef DEBUG_ON_SCREEN
     #if DEBUG_ON_SCREEN
@@ -159,6 +172,21 @@
     
     return _persistentStoreCoordinator;
 }
+
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    
+    // Call FBAppCall's handleOpenURL:sourceApplication to handle Facebook app responses
+    BOOL wasHandled = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+    
+    // You can add your app-specific url handling code here if needed
+    
+    return wasHandled;
+}
+
 
 #pragma mark - Application's Documents directory
 

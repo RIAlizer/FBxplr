@@ -11,7 +11,7 @@
 
 @interface AppDelegate : CustomUIApplication
 
-@property (strong, nonatomic) UIWindow *window;
+@property (MB_STRONG) UIWindow *window;
 
 @property (readonly, MB_STRONG) NSManagedObjectContext *managedObjectContext;
 @property (readonly, MB_STRONG) NSManagedObjectModel *managedObjectModel;
