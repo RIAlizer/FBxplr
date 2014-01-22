@@ -35,9 +35,9 @@ All these libraries are essential for advanced iOS development
  
 ----
 ### Features
-* Universal App (iPhone/iPad)
+* Universal App (iPhone/iPad) (TODO)
 * Facebook Login Auth
-* CoreData Integration
+* CoreData Integration (TODO)
 * Works automagically on ARC and non-ARC enviroment - more info [Utils/DevDefines.h](https://github.com/RIAlizer/FBxplr/blob/master/FBxplr/FBxplr/Utils/DevDefines.h)  
 	* Target FBxplr for non-ARC
 	* Target FBxplrARC is ARC enable (TODO)
