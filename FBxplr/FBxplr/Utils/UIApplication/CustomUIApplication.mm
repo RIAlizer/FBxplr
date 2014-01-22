@@ -88,21 +88,7 @@ const int MONNSExceptionEncounteredErrorCode = ERROR_DEFAULT_ERROR_CODE;
 {
     NSLog(@"%@ %@",[NSString stringWithCString:__PRETTY_FUNCTION__ encoding:NSASCIIStringEncoding],@"Should I manage handleMemoryWarning? ");
 }
-//
-// Global exception handling
-// thanks to: http://www.restoroot.com/Blog/2008/10/18/crash-reporter-for-iphone-applications/
-//
-/*
- void EX____uncaughtExceptionHandler(NSException *exception)
- {
- PolyLog(99,@"uncaughtExceptionHandler");
- 
- 
- //[AppManager showException:exception];
- exit(1);
- return;
- }
- */
+
 - (void)view:(UIView*)aView moveTo:(CGPoint)destination duration:(float)secs option:(UIViewAnimationOptions)option delegate:(id)delegate callback:(SEL)method {
     [UIView animateWithDuration:secs delay:0.0 options:option
                      animations:^{
@@ -114,6 +100,7 @@ const int MONNSExceptionEncounteredErrorCode = ERROR_DEFAULT_ERROR_CODE;
                          }
                      }];
 }
+
 #define LOG_VIEW_PADDING_X 100
 #define LOG_VIEW_WIDTH self.window.frame.size.width
 
@@ -141,9 +128,7 @@ const int MONNSExceptionEncounteredErrorCode = ERROR_DEFAULT_ERROR_CODE;
     [self.window addSubview:self.logView];
     [self.window bringSubviewToFront:self.logView];
     
-    //[self.window.rootViewController.view addSubview:self.logView];
-    //[self.window.rootViewController.view bringSubviewToFront:self.logView];
-    //self.logView.transform = CGAffineTransformMakeRotation(M_PI_2); // 90 degress
+
     
     RELEASE(self.logView);
 #endif
@@ -169,13 +154,7 @@ const int MONNSExceptionEncounteredErrorCode = ERROR_DEFAULT_ERROR_CODE;
 - (void) redirectConsoleLogTo:(UITextView*) logView
 {
     
-    /*
-     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
-     NSUserDomainMask, YES);
-     NSString *documentsDirectory = [paths objectAtIndex:0];
-     NSString *logPath = [documentsDirectory stringByAppendingPathComponent:@"console.log"];
-     freopen([logPath fileSystemRepresentation],"a+",stderr);
-     */
+  
     
     NSPipe* pipe = [NSPipe pipe];
     NSFileHandle* pipeReadHandle = [pipe fileHandleForReading];
@@ -234,42 +213,6 @@ const int MONNSExceptionEncounteredErrorCode = ERROR_DEFAULT_ERROR_CODE;
     CGPoint p = [self.logView contentOffset];
     [self.logView setContentOffset:p animated:NO];
     [self.logView scrollRangeToVisible:NSMakeRange([self.logView.text length], 0)];
-}
-/*
- - (void)applicationWillResignActive:(UIApplication *)application
- {
- // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
- // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
- NSLog(@"applicationWillResignActive");
- }
- 
- - (void)applicationDidEnterBackground:(UIApplication *)application
- {
- // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
- // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
- NSLog(@"applicationDidEnterBackground");
- }
- 
- - (void)applicationWillEnterForeground:(UIApplication *)application
- {
- // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
- NSLog(@"applicationWillEnterForeground");
- }
- 
- - (void)applicationDidBecomeActive:(UIApplication *)application
- {
- // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
- NSLog(@"applicationDidBecomeActive");
- }
- 
- - (void)applicationWillTerminate:(UIApplication *)application
- {
- // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
- PolyLog(LOG_LEVEL_CUSTOM,@"applicationWillTerminate");
- }
- */
-
-
-
+} 
 
 @end

@@ -68,25 +68,27 @@ const NSInteger UncaughtExceptionHandlerReportAddressCount = 5;
 {
 	[self validateAndSaveCriticalApplicationData];
     
-    NSLog(@"\n******************************************************\n");
-	NSLog(@"Uncaught Exception Debug details follow:\n%@\n%@", [exception reason], [[exception userInfo] objectForKey:UncaughtExceptionHandlerAddressesKey]);
-    NSLog(@"\n******************************************************\n");
+    /***
+     NSLog(@"\n******************************************************\n");
+     NSLog(@"Uncaught Exception Debug details follow:\n%@\n%@", [exception reason], [[exception userInfo] objectForKey:UncaughtExceptionHandlerAddressesKey]);
+     NSLog(@"\n******************************************************\n");
+     ***/
+    
+    UIAlertView *alert =
+    [[UIAlertView alloc]
+      initWithTitle:NSLocalizedString(@"Unhandled exception", nil)
+      message:[NSString stringWithFormat:NSLocalizedString(
+                                                           @"You can try to continue but the application may be unstable.\n\n"
+                                                           @"Debug details follow:\n%@\n%@", nil),
+               [exception reason],
+               [[exception userInfo] objectForKey:UncaughtExceptionHandlerAddressesKey]]
+      delegate:self
+      cancelButtonTitle:NSLocalizedString(@"Quit", nil)
+      otherButtonTitles:NSLocalizedString(@"Continue", nil), nil];
+    [alert show];
 	
-    /*
-     UIAlertView *alert =
-     [[[UIAlertView alloc]
-     initWithTitle:NSLocalizedString(@"Unhandled exception", nil)
-     message:[NSString stringWithFormat:NSLocalizedString(
-     @"You can try to continue but the application may be unstable.\n\n"
-     @"Debug details follow:\n%@\n%@", nil),
-     [exception reason],
-     [[exception userInfo] objectForKey:UncaughtExceptionHandlerAddressesKey]]
-     delegate:self
-     cancelButtonTitle:NSLocalizedString(@"Quit", nil)
-     otherButtonTitles:NSLocalizedString(@"Continue", nil), nil]
-     autorelease];
-     [alert show];*/
-	
+    RELEASE_OBJ(alert);
+    
 	CFRunLoopRef runLoop = CFRunLoopGetCurrent();
 	CFArrayRef allModes = CFRunLoopCopyAllModes(runLoop);
 	

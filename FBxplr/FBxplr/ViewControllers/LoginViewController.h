@@ -13,9 +13,8 @@
 {
     
 }
-@property (retain, nonatomic) IBOutlet FBLoginView *loginButtonView;
-@property (retain, nonatomic) IBOutlet FBProfilePictureView *profilePictureView;
-
-@property (retain, nonatomic) IBOutlet UILabel *labelName;
+@property (MB_STRONG) IBOutlet FBLoginView *loginButtonView;
+@property (MB_STRONG) IBOutlet FBProfilePictureView *profilePictureView;
+@property (MB_STRONG) IBOutlet UILabel *labelName;
 
 @end

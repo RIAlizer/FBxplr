@@ -18,13 +18,14 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 -(void)dealloc
 {
-    [_profilePictureView release];
-    [_labelName release];
-   
-    [_loginButtonView release];
-       RELEASE_OBJ(_loginButtonView);
+    RELEASE_OBJ(_profilePictureView);
+    RELEASE_OBJ(_labelName);
+    
+    RELEASE_OBJ(_loginButtonView);
+    RELEASE_OBJ(_loginButtonView);
     SUPER_DEALLOC();
 }
 
@@ -48,25 +49,25 @@
 -(void)setupUI
 {
     /*
-    NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
-    NSMutableArray* languages = [userDefaults objectForKey:@"AppleLanguages"];
-    [languages insertObject:@"it" atIndex:0]; // ISO639-1
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    */
+     NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
+     NSMutableArray* languages = [userDefaults objectForKey:@"AppleLanguages"];
+     [languages insertObject:@"it" atIndex:0]; // ISO639-1
+     [[NSUserDefaults standardUserDefaults] synchronize];
+     */
     self.navigationController.navigationItem.title = LSTR(@"Login");
     self.loginButtonView.delegate = self;
     
     /*
-    NSArray *permissions = @[
-                            @"user_likes",
-                            @"read_stream",
-                            @"email",
-                            @"user_location",
-                            @"user_hometown",
-                            @"user_about_me",
-                            @"user_birthday",
-                            @"user_events"];
-    */
+     NSArray *permissions = @[
+     @"user_likes",
+     @"read_stream",
+     @"email",
+     @"user_location",
+     @"user_hometown",
+     @"user_about_me",
+     @"user_birthday",
+     @"user_events"];
+     */
     NSArray *permissions =@[@"basic_info", @"email", @"user_likes"];
     
     self.loginButtonView.readPermissions = permissions;
@@ -75,13 +76,13 @@
     
     self.profilePictureView.alpha = 0;
     self.labelName.alpha = 0;
- 
+    
 }
 
 #pragma mark - FBLoginViewDelegate
 // This method will be called when the user information has been fetched
-- (void)loginViewFetchedUserInfo:(FBLoginView *)loginView
-                            user:(id<FBGraphUser>)user {
+- (void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user
+{
     self.profilePictureView.profileID = user.id;
     self.labelName.text = [NSString stringWithFormat:LSTR(@"Welcome %@"),user.name];
 }
@@ -100,8 +101,10 @@
 }
 
 // Handle possible errors that can occur during login
-- (void)loginView:(FBLoginView *)loginView handleError:(NSError *)error {
-    NSString *alertMessage, *alertTitle;
+- (void)loginView:(FBLoginView *)loginView handleError:(NSError *)error
+{
+    NSString *alertMessage;
+    NSString *alertTitle;
     
     // If the user should perform an action outside of you app to recover,
     // the SDK will provide a message for the user, you just need to surface it.
@@ -122,7 +125,7 @@
         // the user not being able to complete a task they had initiated in your app
         // (like accessing FB-stored information or posting to Facebook)
     } else if ([FBErrorUtility errorCategoryForError:error] == FBErrorCategoryUserCancelled) {
-        NSLog(@"user cancelled login");
+        LogInfo(@"user cancelled login");
         
         // For simplicity, this sample handles other errors with a generic message
         // You can checkout our error handling guide for more detailed information
@@ -130,15 +133,19 @@
     } else {
         alertTitle  = @"Something went wrong";
         alertMessage = @"Please try again later.";
-        NSLog(@"Unexpected error:%@", error);
+        LogError(@"Unexpected error:%@", error);
     }
     
     if (alertMessage) {
-        [[[UIAlertView alloc] initWithTitle:alertTitle
-                                    message:alertMessage
-                                   delegate:nil
-                          cancelButtonTitle:@"OK"
-                          otherButtonTitles:nil] show];
+        
+        
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:alertTitle
+                                                            message:alertMessage
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil] ;
+        [alertView show];
+        RELEASE_OBJ(alertView);
     }
 }
 @end

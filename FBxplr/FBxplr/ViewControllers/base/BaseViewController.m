@@ -21,6 +21,30 @@
 
 @synthesize HUD = _HUD;
 
+
+#pragma mark - Memory Management
+
+-(void)viewDidUnload
+{
+    [super viewDidUnload];
+    
+    // NULLME(self.labelTitle);
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+-(void)dealloc
+{
+    
+    // RELEASE_OBJ(_labelTitle);
+    SUPER_DEALLOC();
+}
+
+
 #pragma mark - Init
 
 /*
@@ -300,28 +324,6 @@
 // Add this Method
 - (BOOL)prefersStatusBarHidden {
     return NO;
-}
-
-#pragma mark - Memory Management
-
--(void)viewDidUnload
-{
-    [super viewDidUnload];
-    
-    // NULLME(self.labelTitle);
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
--(void)dealloc
-{
-    
-    // RELEASE_OBJ(_labelTitle);
-    SUPER_DEALLOC();
 }
 
 @end

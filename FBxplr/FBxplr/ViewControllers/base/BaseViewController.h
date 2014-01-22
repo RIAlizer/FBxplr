@@ -23,7 +23,7 @@
     
    
 }
-@property (nonatomic, strong) NSMutableIndexSet * optionIndices;
+ 
 @property (MB_STRONG) id<DismissViewDelegate> dismissDelegate;
 @property (MB_STRONG) MBProgressHUD * HUD;
 
