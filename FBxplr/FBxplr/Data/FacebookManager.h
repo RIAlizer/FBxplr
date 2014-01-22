@@ -14,10 +14,10 @@
 
 @interface FacebookManager : NSObject
 {
-    FBSession *_session;
+    //FBSession *_session;
 }
 @property (MB_STRONG) NSString *  FBSessionStateChangedNotification;
-@property (MB_STRONG) FBSession * session;
+//@property (MB_STRONG) FBSession * session;
 
 
 +(FacebookManager*)sharedInstance;
