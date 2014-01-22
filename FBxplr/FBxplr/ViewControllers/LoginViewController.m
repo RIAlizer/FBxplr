@@ -75,7 +75,8 @@
     self.profilePictureView.backgroundColor = [UIColor clearColor];
     
     self.profilePictureView.alpha = 0;
-    self.profilePictureView.layer.cornerRadius = 50;
+    self.profilePictureView.layer.cornerRadius = 100;
+    
     self.labelName.alpha = 0;
     
 }
