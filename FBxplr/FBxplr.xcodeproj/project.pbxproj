@@ -94,6 +94,30 @@
 		3AA32A6718839FE600548901 /* UncaughtExceptionHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3AA32A6518839FE600548901 /* UncaughtExceptionHandler.mm */; };
 		3AA32A6A1883A11600548901 /* NSMutableAttributedString+Attributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA32A691883A11600548901 /* NSMutableAttributedString+Attributes.m */; };
 		3AA32A6B1883A11600548901 /* NSMutableAttributedString+Attributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA32A691883A11600548901 /* NSMutableAttributedString+Attributes.m */; };
+		3AB18159188F595500C9A04C /* FacebookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB18158188F595500C9A04C /* FacebookManager.m */; };
+		3AB1815A188F595500C9A04C /* FacebookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB18158188F595500C9A04C /* FacebookManager.m */; };
+		3AB1815B188F595500C9A04C /* FacebookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB18158188F595500C9A04C /* FacebookManager.m */; };
+		3AB1815F188F5AC800C9A04C /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB1815D188F5AC800C9A04C /* FriendsViewController.m */; };
+		3AB18160188F5AC800C9A04C /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB1815D188F5AC800C9A04C /* FriendsViewController.m */; };
+		3AB18161188F5AC800C9A04C /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB1815D188F5AC800C9A04C /* FriendsViewController.m */; };
+		3AB18162188F5AC800C9A04C /* FriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AB1815E188F5AC800C9A04C /* FriendsViewController.xib */; };
+		3AB18163188F5AC800C9A04C /* FriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AB1815E188F5AC800C9A04C /* FriendsViewController.xib */; };
+		3AB18164188F5AC800C9A04C /* FriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AB1815E188F5AC800C9A04C /* FriendsViewController.xib */; };
+		3AB18168188F5CAA00C9A04C /* FriendTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB18167188F5CAA00C9A04C /* FriendTableCellView.m */; };
+		3AB18169188F5CAA00C9A04C /* FriendTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB18167188F5CAA00C9A04C /* FriendTableCellView.m */; };
+		3AB1816A188F5CAA00C9A04C /* FriendTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB18167188F5CAA00C9A04C /* FriendTableCellView.m */; };
+		3AD0A59A188F63FA00B7B892 /* FriendCD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD0A58E188F63FA00B7B892 /* FriendCD.m */; };
+		3AD0A59B188F63FA00B7B892 /* FriendCD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD0A58E188F63FA00B7B892 /* FriendCD.m */; };
+		3AD0A59C188F63FA00B7B892 /* FriendCD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD0A58E188F63FA00B7B892 /* FriendCD.m */; };
+		3AD0A59D188F63FA00B7B892 /* PictureCD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD0A590188F63FA00B7B892 /* PictureCD.m */; };
+		3AD0A59E188F63FA00B7B892 /* PictureCD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD0A590188F63FA00B7B892 /* PictureCD.m */; };
+		3AD0A59F188F63FA00B7B892 /* PictureCD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD0A590188F63FA00B7B892 /* PictureCD.m */; };
+		3AD0A5AD188F642300B7B892 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD0A5AA188F642300B7B892 /* Friend.m */; };
+		3AD0A5AE188F642300B7B892 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD0A5AA188F642300B7B892 /* Friend.m */; };
+		3AD0A5AF188F642300B7B892 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD0A5AA188F642300B7B892 /* Friend.m */; };
+		3AD0A5B0188F642300B7B892 /* Picture.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD0A5AC188F642300B7B892 /* Picture.m */; };
+		3AD0A5B1188F642300B7B892 /* Picture.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD0A5AC188F642300B7B892 /* Picture.m */; };
+		3AD0A5B2188F642300B7B892 /* Picture.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD0A5AC188F642300B7B892 /* Picture.m */; };
 		B39552C2B8B84D2C91958419 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 919C961D60A644F3A8C506C0 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -175,6 +199,21 @@
 		3AA32A6518839FE600548901 /* UncaughtExceptionHandler.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UncaughtExceptionHandler.mm; sourceTree = "<group>"; };
 		3AA32A681883A11600548901 /* NSMutableAttributedString+Attributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+Attributes.h"; sourceTree = "<group>"; };
 		3AA32A691883A11600548901 /* NSMutableAttributedString+Attributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+Attributes.m"; sourceTree = "<group>"; };
+		3AB18157188F595500C9A04C /* FacebookManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookManager.h; sourceTree = "<group>"; };
+		3AB18158188F595500C9A04C /* FacebookManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookManager.m; sourceTree = "<group>"; };
+		3AB1815C188F5AC800C9A04C /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
+		3AB1815D188F5AC800C9A04C /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
+		3AB1815E188F5AC800C9A04C /* FriendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendsViewController.xib; sourceTree = "<group>"; };
+		3AB18166188F5CAA00C9A04C /* FriendTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendTableCellView.h; sourceTree = "<group>"; };
+		3AB18167188F5CAA00C9A04C /* FriendTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendTableCellView.m; sourceTree = "<group>"; };
+		3AD0A58D188F63FA00B7B892 /* FriendCD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendCD.h; sourceTree = "<group>"; };
+		3AD0A58E188F63FA00B7B892 /* FriendCD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendCD.m; sourceTree = "<group>"; };
+		3AD0A58F188F63FA00B7B892 /* PictureCD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureCD.h; sourceTree = "<group>"; };
+		3AD0A590188F63FA00B7B892 /* PictureCD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureCD.m; sourceTree = "<group>"; };
+		3AD0A5A9188F642300B7B892 /* Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Friend.h; sourceTree = "<group>"; };
+		3AD0A5AA188F642300B7B892 /* Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Friend.m; sourceTree = "<group>"; };
+		3AD0A5AB188F642300B7B892 /* Picture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Picture.h; sourceTree = "<group>"; };
+		3AD0A5AC188F642300B7B892 /* Picture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Picture.m; sourceTree = "<group>"; };
 		919C961D60A644F3A8C506C0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -220,10 +259,14 @@
 		3A59FD5A1883A9A00078AE67 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				3AB18165188F5C8400C9A04C /* TableViewCells */,
 				3A59FD6B1883AAA60078AE67 /* base */,
 				3A59FD621883AA760078AE67 /* LoginViewController.h */,
 				3A59FD631883AA760078AE67 /* LoginViewController.m */,
 				3A59FD641883AA760078AE67 /* LoginViewController.xib */,
+				3AB1815C188F5AC800C9A04C /* FriendsViewController.h */,
+				3AB1815D188F5AC800C9A04C /* FriendsViewController.m */,
+				3AB1815E188F5AC800C9A04C /* FriendsViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -436,10 +479,45 @@
 		3AA32A5A18839FA000548901 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				3AD0A589188F63FA00B7B892 /* Model */,
+				3AB18157188F595500C9A04C /* FacebookManager.h */,
+				3AB18158188F595500C9A04C /* FacebookManager.m */,
 				3AA32A5B18839FA000548901 /* AppManager.h */,
 				3AA32A5C18839FA000548901 /* AppManager.m */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		3AB18165188F5C8400C9A04C /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				3AB18166188F5CAA00C9A04C /* FriendTableCellView.h */,
+				3AB18167188F5CAA00C9A04C /* FriendTableCellView.m */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		3AD0A589188F63FA00B7B892 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3AD0A5A9188F642300B7B892 /* Friend.h */,
+				3AD0A5AA188F642300B7B892 /* Friend.m */,
+				3AD0A5AB188F642300B7B892 /* Picture.h */,
+				3AD0A5AC188F642300B7B892 /* Picture.m */,
+				3AD0A58C188F63FA00B7B892 /* CoreData */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3AD0A58C188F63FA00B7B892 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				3AD0A58D188F63FA00B7B892 /* FriendCD.h */,
+				3AD0A58E188F63FA00B7B892 /* FriendCD.m */,
+				3AD0A58F188F63FA00B7B892 /* PictureCD.h */,
+				3AD0A590188F63FA00B7B892 /* PictureCD.m */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -541,6 +619,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A59FD511883A7C10078AE67 /* InfoPlist.strings in Resources */,
+				3AB18164188F5AC800C9A04C /* FriendsViewController.xib in Resources */,
 				3A549A141883B76B0022410C /* Localizable.strings in Resources */,
 				3A59FD521883A7C10078AE67 /* Images.xcassets in Resources */,
 				3A59FD6A1883AA760078AE67 /* LoginViewController.xib in Resources */,
@@ -552,6 +631,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AA329CE18839EFC00548901 /* InfoPlist.strings in Resources */,
+				3AB18162188F5AC800C9A04C /* FriendsViewController.xib in Resources */,
 				3A549A131883B76B0022410C /* Localizable.strings in Resources */,
 				3AA329D918839EFC00548901 /* Images.xcassets in Resources */,
 				3A59FD681883AA760078AE67 /* LoginViewController.xib in Resources */,
@@ -564,6 +644,7 @@
 			files = (
 				3A59FD691883AA760078AE67 /* LoginViewController.xib in Resources */,
 				3AA329EB18839EFC00548901 /* InfoPlist.strings in Resources */,
+				3AB18163188F5AC800C9A04C /* FriendsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -637,11 +718,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AD0A5AF188F642300B7B892 /* Friend.m in Sources */,
+				3AB1816A188F5CAA00C9A04C /* FriendTableCellView.m in Sources */,
 				3A59FD321883A7C10078AE67 /* UIView+Animation.m in Sources */,
 				3A59FD341883A7C10078AE67 /* UIColor+Hex.m in Sources */,
 				3A59FD351883A7C10078AE67 /* UIView+Size.m in Sources */,
 				3A59FD361883A7C10078AE67 /* UncaughtExceptionHandler.mm in Sources */,
+				3AD0A5B2188F642300B7B892 /* Picture.m in Sources */,
+				3AD0A59F188F63FA00B7B892 /* PictureCD.m in Sources */,
 				3A59FD371883A7C10078AE67 /* UIImage+RoundedCorner.m in Sources */,
+				3AD0A59C188F63FA00B7B892 /* FriendCD.m in Sources */,
 				3A59FD381883A7C10078AE67 /* UIImage+Optimize.m in Sources */,
 				3A59FD391883A7C10078AE67 /* KVCUtils.m in Sources */,
 				3A59FD3A1883A7C10078AE67 /* UIView+RoundCorners.m in Sources */,
@@ -649,6 +735,7 @@
 				3A59FD3C1883A7C10078AE67 /* AppManager.m in Sources */,
 				3A59FD3E1883A7C10078AE67 /* CustomUIApplication.mm in Sources */,
 				3A59FD671883AA760078AE67 /* LoginViewController.m in Sources */,
+				3AB18161188F5AC800C9A04C /* FriendsViewController.m in Sources */,
 				3A59FD3F1883A7C10078AE67 /* UIView+Positioning.m in Sources */,
 				3A59FD701883AAA70078AE67 /* BaseViewController.m in Sources */,
 				3A59FD411883A7C10078AE67 /* AppDelegate.m in Sources */,
@@ -657,6 +744,7 @@
 				3A59FD441883A7C10078AE67 /* UIImage+Alpha.m in Sources */,
 				3A59FD461883A7C10078AE67 /* UIImage+Resize.m in Sources */,
 				3A59FD471883A7C10078AE67 /* NSMutableAttributedString+Attributes.m in Sources */,
+				3AB1815B188F595500C9A04C /* FacebookManager.m in Sources */,
 				3A59FD481883A7C10078AE67 /* NSDictionary+UrlEncoding.m in Sources */,
 				3A59FD491883A7C10078AE67 /* main.m in Sources */,
 			);
@@ -666,11 +754,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AD0A5AD188F642300B7B892 /* Friend.m in Sources */,
+				3AB18168188F5CAA00C9A04C /* FriendTableCellView.m in Sources */,
 				3AA32A4818839F3F00548901 /* UIView+Animation.m in Sources */,
 				3AA32A3E18839F3F00548901 /* UIColor+Hex.m in Sources */,
 				3AA32A4E18839F3F00548901 /* UIView+Size.m in Sources */,
 				3AA32A6618839FE600548901 /* UncaughtExceptionHandler.mm in Sources */,
+				3AD0A5B0188F642300B7B892 /* Picture.m in Sources */,
+				3AD0A59D188F63FA00B7B892 /* PictureCD.m in Sources */,
 				3AA32A4618839F3F00548901 /* UIImage+RoundedCorner.m in Sources */,
+				3AD0A59A188F63FA00B7B892 /* FriendCD.m in Sources */,
 				3AA32A4218839F3F00548901 /* UIImage+Optimize.m in Sources */,
 				3AA32A5618839F3F00548901 /* KVCUtils.m in Sources */,
 				3AA32A4C18839F3F00548901 /* UIView+RoundCorners.m in Sources */,
@@ -678,6 +771,7 @@
 				3AA32A6018839FA000548901 /* AppManager.m in Sources */,
 				3AA32A5818839F3F00548901 /* CustomUIApplication.mm in Sources */,
 				3A59FD651883AA760078AE67 /* LoginViewController.m in Sources */,
+				3AB1815F188F5AC800C9A04C /* FriendsViewController.m in Sources */,
 				3AA32A4A18839F3F00548901 /* UIView+Positioning.m in Sources */,
 				3A59FD6E1883AAA70078AE67 /* BaseViewController.m in Sources */,
 				3AA329D418839EFC00548901 /* AppDelegate.m in Sources */,
@@ -686,6 +780,7 @@
 				3AA32A4018839F3F00548901 /* UIImage+Alpha.m in Sources */,
 				3AA32A4418839F3F00548901 /* UIImage+Resize.m in Sources */,
 				3AA32A6A1883A11600548901 /* NSMutableAttributedString+Attributes.m in Sources */,
+				3AB18159188F595500C9A04C /* FacebookManager.m in Sources */,
 				3AA32A3818839F3F00548901 /* NSDictionary+UrlEncoding.m in Sources */,
 				3AA329D018839EFC00548901 /* main.m in Sources */,
 			);
@@ -695,12 +790,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AB18169188F5CAA00C9A04C /* FriendTableCellView.m in Sources */,
 				3AA32A6B1883A11600548901 /* NSMutableAttributedString+Attributes.m in Sources */,
 				3A59FD6F1883AAA70078AE67 /* BaseViewController.m in Sources */,
+				3AD0A5AE188F642300B7B892 /* Friend.m in Sources */,
 				3AA32A4B18839F3F00548901 /* UIView+Positioning.m in Sources */,
 				3AA32A4318839F3F00548901 /* UIImage+Optimize.m in Sources */,
 				3AA32A5918839F3F00548901 /* CustomUIApplication.mm in Sources */,
 				3AA32A5118839F3F00548901 /* UIViewController+Container.m in Sources */,
+				3AD0A5B1188F642300B7B892 /* Picture.m in Sources */,
+				3AB18160188F5AC800C9A04C /* FriendsViewController.m in Sources */,
 				3AA32A4118839F3F00548901 /* UIImage+Alpha.m in Sources */,
 				3AA32A4718839F3F00548901 /* UIImage+RoundedCorner.m in Sources */,
 				3AA32A4F18839F3F00548901 /* UIView+Size.m in Sources */,
@@ -708,13 +807,16 @@
 				3AA329ED18839EFC00548901 /* FBxplrTests.m in Sources */,
 				3AA32A3318839F3F00548901 /* NSMutableArray+Shuffle.m in Sources */,
 				3AA32A6718839FE600548901 /* UncaughtExceptionHandler.mm in Sources */,
+				3AB1815A188F595500C9A04C /* FacebookManager.m in Sources */,
 				3AA32A3F18839F3F00548901 /* UIColor+Hex.m in Sources */,
 				3AA32A4518839F3F00548901 /* UIImage+Resize.m in Sources */,
 				3AA32A4918839F3F00548901 /* UIView+Animation.m in Sources */,
 				3A59FD661883AA760078AE67 /* LoginViewController.m in Sources */,
 				3AA32A6118839FA000548901 /* AppManager.m in Sources */,
+				3AD0A59E188F63FA00B7B892 /* PictureCD.m in Sources */,
 				3AA32A5718839F3F00548901 /* KVCUtils.m in Sources */,
 				3AA32A3918839F3F00548901 /* NSDictionary+UrlEncoding.m in Sources */,
+				3AD0A59B188F63FA00B7B892 /* FriendCD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

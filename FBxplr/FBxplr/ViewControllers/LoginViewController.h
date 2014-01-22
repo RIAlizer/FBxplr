@@ -16,5 +16,6 @@
 @property (MB_STRONG) IBOutlet FBLoginView *loginButtonView;
 @property (MB_STRONG) IBOutlet FBProfilePictureView *profilePictureView;
 @property (MB_STRONG) IBOutlet UILabel *labelName;
+- (IBAction)pushNextView:(id)sender;
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "LoginViewController.h"
-
+#import "FriendsViewController.h"
 
 @implementation LoginViewController
 
@@ -75,6 +75,7 @@
     self.profilePictureView.backgroundColor = [UIColor clearColor];
     
     self.profilePictureView.alpha = 0;
+    self.profilePictureView.layer.cornerRadius = 50;
     self.labelName.alpha = 0;
     
 }
@@ -147,5 +148,14 @@
         [alertView show];
         RELEASE_OBJ(alertView);
     }
+}
+
+#pragma mark Actions
+
+- (IBAction)pushNextView:(id)sender
+{
+    FriendsViewController *friendsViewController = [[FriendsViewController alloc] initWithNibName:@"FriendsViewController" bundle:nil];
+    [self.navigationController pushViewController:friendsViewController animated:YES];
+    RELEASE_OBJ(friendsViewController);
 }
 @end
