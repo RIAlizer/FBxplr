@@ -24,7 +24,7 @@
 
 -(id)initWithDictionary:(NSDictionary*)dict
 {
-    
+    NSParameterAssert(IsEmpty(dict));
     
     self = [super init];
     
@@ -39,7 +39,7 @@
         self.name = [KVCUtils stringFrom:dict forKey:@"name"];
         
         NSDictionary * pictureDict = [dict objectForKey:@"picture"];
-        if(!IsEmpty(pictureDict))
+        if(pictureDict)
             self.pictureFriend = [[Picture alloc] initWithDictionary:[pictureDict objectForKey:@"data"]];
 
        

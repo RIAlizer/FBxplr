@@ -18,7 +18,7 @@
 
 -(id)initWithDictionary:(NSDictionary*)dict
 {
-    
+    NSParameterAssert(IsEmpty(dict));
     
     self = [super init];
     
@@ -27,8 +27,8 @@
         
         
         self.url = [KVCUtils stringFrom:dict forKey:@"url"];
-        self.height = [KVCUtils numberFrom:dict forKey:@"height"];
-        self.width = [KVCUtils numberFrom:dict forKey:@"width"];
+       // self.height = [KVCUtils numberFrom:dict forKey:@"height"];
+        //self.width = [KVCUtils numberFrom:dict forKey:@"width"];
       
         
     }
