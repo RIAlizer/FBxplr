@@ -15,6 +15,7 @@
 
 
 @synthesize mainWindow = _mainWindow;
+@synthesize currentUser = _currentUser;
 
 SYNTHESIZE_SINGLETON_FOR_CLASS(AppManager);
 
@@ -23,13 +24,13 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(AppManager);
     self.mainWindow = window;
     
     LogTrace(@"AppManager initAppData");
-
-   
-    
   
 }
 
-
+-(void)setCurrentUser:(User *)currentUser
+{
+    _currentUser = currentUser;
+}
 
 -(void)releaseResources
 {

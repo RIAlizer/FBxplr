@@ -14,8 +14,19 @@
         <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="width" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
     </entity>
+    <entity name="UserCD" representedClassName="UserCD" syncable="YES">
+        <attribute name="birthday" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="first_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="last_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="middle_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="FriendCD" positionX="342" positionY="140" width="128" height="148"/>
-        <element name="PictureCD" positionX="574" positionY="207" width="128" height="88"/>
+        <element name="FriendCD" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="PictureCD" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="UserCD" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

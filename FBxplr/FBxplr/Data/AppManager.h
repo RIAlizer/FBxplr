@@ -10,6 +10,7 @@
 #import "SingletonHelper.h"
 
 #import "KVCUtils.h"
+#import "User.h"
 
 
 
@@ -25,7 +26,8 @@
 
 
 
-@property (nonatomic, strong) UIWindow * mainWindow;
+@property (MB_STRONG) UIWindow * mainWindow;
+@property (MB_STRONG) User * currentUser;
 ///--------------
 /// @name Class Methods
 ///--------------
