@@ -21,6 +21,7 @@
 
 -(void)dealloc
 {
+    [_buttonFriends release];
     [_buttonNext release];
     RELEASE_OBJ(_profilePictureView);
     RELEASE_OBJ(_labelName);
@@ -36,7 +37,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        _firstLoad = YES;
     }
     return self;
 }
@@ -44,7 +45,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     [self setupUI];
+    
 }
 
 -(void)setupUI
@@ -57,8 +60,31 @@
      */
     self.navigationItem.title = LSTR(@"Login");
     self.loginButtonView.delegate = self;
-    self.buttonNext.hidden = YES;
-    [self.buttonNext setRoundCorners];
+    
+    CGPoint newPosition = CGPointMake(55, 100);
+    [self.loginButtonView setFrame:CGRectMake(newPosition.x , newPosition.y, self.loginButtonView.frame.size.width, self.loginButtonView.frame.size.height)];
+    
+    //buttonNext
+    self.buttonNext.alpha = 0;
+    self.buttonNext.buttonColor = [UIColor turquoiseColor];
+    self.buttonNext.shadowColor = [UIColor greenSeaColor];
+    self.buttonNext.shadowHeight = 3.0f;
+    self.buttonNext.cornerRadius = 6.0f;
+    self.buttonNext.titleLabel.font = [UIFont boldFlatFontOfSize:16];
+    [self.buttonNext setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
+    [self.buttonNext setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted];
+   
+    //buttonFriends
+    self.buttonFriends.alpha = 0;
+    self.buttonFriends.buttonColor = [UIColor turquoiseColor];
+    self.buttonFriends.shadowColor = [UIColor greenSeaColor];
+    self.buttonFriends.shadowHeight = 3.0f;
+    self.buttonFriends.cornerRadius = 6.0f;
+    self.buttonFriends.titleLabel.font = [UIFont boldFlatFontOfSize:16];
+    [self.buttonFriends setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
+    [self.buttonFriends setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted];
+   
+    
     /*
      NSArray *permissions = @[
      @"user_likes",
@@ -77,7 +103,7 @@
     self.profilePictureView.backgroundColor = [UIColor clearColor];
     
     self.profilePictureView.alpha = 0;
-    self.profilePictureView.layer.cornerRadius = 100;
+    [self.profilePictureView setRoundCorners:70];
     
     self.labelName.alpha = 0;
     
@@ -87,22 +113,65 @@
 // This method will be called when the user information has been fetched
 - (void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user
 {
+    
+    User * currenUser =[[User alloc] init];
+    currenUser.uid = user.id;
+    currenUser.name = user.name;
+    currenUser.first_name = user.first_name;
+    currenUser.last_name = user.last_name;
+    currenUser.middle_name = user.middle_name;
+    currenUser.birthday = user.birthday;
+    currenUser.username = user.username;
+    currenUser.link = user.link;
+    
+    [[AppManager sharedInstance] setCurrentUser:currenUser];
+    
     self.profilePictureView.profileID = user.id;
     self.labelName.text = [NSString stringWithFormat:LSTR(@"Welcome %@"),user.name];
-    self.buttonNext.hidden = NO;
+    
+    
+    
 }
 
-
-- (void)loginViewShowingLoggedInUser:(FBLoginView *)loginView
+-(void)showUserUI
 {
     [self.profilePictureView fadeInWithDuration:DEFAULT_FADE_IN_DURATION];
     [self.labelName fadeInWithDuration:DEFAULT_FADE_IN_DURATION];
+    
+    [self.buttonNext  fadeInWithDuration:DEFAULT_FADE_IN_DURATION];
+    [self.buttonFriends  fadeInWithDuration:DEFAULT_FADE_IN_DURATION];
+    
+}
+
+-(void)hideUserUI
+{
+    [self.profilePictureView fadeOutWithDuration:DEFAULT_FADE_OUT_DURATION];
+    [self.labelName fadeOutWithDuration:DEFAULT_FADE_OUT_DURATION];
+    
+    [self.buttonNext  fadeOutWithDuration:DEFAULT_FADE_OUT_DURATION];
+    [self.buttonFriends  fadeOutWithDuration:DEFAULT_FADE_OUT_DURATION];
+
+    
+}
+
+- (void)loginViewShowingLoggedInUser:(FBLoginView *)loginView
+{
+  
+    
+    
+    CGPoint newPosition = CGPointMake(55, 400);
+    [self.loginButtonView moveTo:newPosition duration:DEFAULT_FADE_IN_DURATION option:UIViewAnimationOptionCurveEaseIn delegate:self callback:@selector(showUserUI)];
 }
 
 - (void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView
 {
-    [self.profilePictureView fadeOutWithDuration:DEFAULT_FADE_OUT_DURATION];
-    [self.labelName fadeOutWithDuration:DEFAULT_FADE_OUT_DURATION];
+
+//    if(_firstLoad){
+//        _firstLoad = NO;
+//        return;
+//    }
+    CGPoint newPosition = CGPointMake(55, 100);
+    [self.loginButtonView moveTo:newPosition duration:DEFAULT_FADE_OUT_DURATION option:UIViewAnimationOptionCurveEaseOut delegate:self callback:@selector(hideUserUI)];
 }
 
 // Handle possible errors that can occur during login
@@ -156,10 +225,20 @@
 
 #pragma mark Actions
 
+
 - (IBAction)pushNextView:(id)sender
+{
+    
+    UserInfoViewController *userInfoViewController = [[UserInfoViewController alloc] initWithNibName:@"UserInfoViewController" bundle:nil];
+    [self.navigationController pushViewController:userInfoViewController animated:YES];
+    RELEASE_OBJ(userInfoViewController);
+}
+
+- (IBAction)pushFriendsView:(id)sender
 {
     FriendsViewController *friendsViewController = [[FriendsViewController alloc] initWithNibName:@"FriendsViewController" bundle:nil];
     [self.navigationController pushViewController:friendsViewController animated:YES];
     RELEASE_OBJ(friendsViewController);
+    
 }
 @end
