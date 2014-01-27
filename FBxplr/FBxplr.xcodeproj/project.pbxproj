@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A1E190218962AE4002FEC60 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1E190018962AE4002FEC60 /* UserInfoViewController.m */; };
+		3A1E190318962AE4002FEC60 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1E190018962AE4002FEC60 /* UserInfoViewController.m */; };
+		3A1E190418962AE4002FEC60 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1E190018962AE4002FEC60 /* UserInfoViewController.m */; };
+		3A1E190518962AE4002FEC60 /* UserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A1E190118962AE4002FEC60 /* UserInfoViewController.xib */; };
+		3A1E190618962AE4002FEC60 /* UserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A1E190118962AE4002FEC60 /* UserInfoViewController.xib */; };
+		3A1E190718962AE4002FEC60 /* UserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A1E190118962AE4002FEC60 /* UserInfoViewController.xib */; };
+		3A1E190F18962CC4002FEC60 /* UserCD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1E190E18962CC4002FEC60 /* UserCD.m */; };
+		3A1E191018962CC4002FEC60 /* UserCD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1E190E18962CC4002FEC60 /* UserCD.m */; };
+		3A1E191118962CC4002FEC60 /* UserCD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1E190E18962CC4002FEC60 /* UserCD.m */; };
+		3A1E191418962CD7002FEC60 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1E191318962CD7002FEC60 /* User.m */; };
+		3A1E191518962CD7002FEC60 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1E191318962CD7002FEC60 /* User.m */; };
+		3A1E191618962CD7002FEC60 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1E191318962CD7002FEC60 /* User.m */; };
 		3A549A131883B76B0022410C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A549A161883B76B0022410C /* Localizable.strings */; };
 		3A549A141883B76B0022410C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A549A161883B76B0022410C /* Localizable.strings */; };
 		3A59FD321883A7C10078AE67 /* UIView+Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA32A1618839F3E00548901 /* UIView+Animation.m */; };
@@ -133,6 +145,13 @@
 
 /* Begin PBXFileReference section */
 		0DCD06ABB2274F9188B88189 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		3A1E18FF18962AE4002FEC60 /* UserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoViewController.h; sourceTree = "<group>"; };
+		3A1E190018962AE4002FEC60 /* UserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoViewController.m; sourceTree = "<group>"; };
+		3A1E190118962AE4002FEC60 /* UserInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoViewController.xib; sourceTree = "<group>"; };
+		3A1E190D18962CC4002FEC60 /* UserCD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCD.h; sourceTree = "<group>"; };
+		3A1E190E18962CC4002FEC60 /* UserCD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCD.m; sourceTree = "<group>"; };
+		3A1E191218962CD7002FEC60 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		3A1E191318962CD7002FEC60 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		3A549A151883B76B0022410C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3A549A171883B7EB0022410C /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3A59FD571883A7C10078AE67 /* FBxplr copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FBxplr copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -264,6 +283,9 @@
 				3A59FD621883AA760078AE67 /* LoginViewController.h */,
 				3A59FD631883AA760078AE67 /* LoginViewController.m */,
 				3A59FD641883AA760078AE67 /* LoginViewController.xib */,
+				3A1E18FF18962AE4002FEC60 /* UserInfoViewController.h */,
+				3A1E190018962AE4002FEC60 /* UserInfoViewController.m */,
+				3A1E190118962AE4002FEC60 /* UserInfoViewController.xib */,
 				3AB1815C188F5AC800C9A04C /* FriendsViewController.h */,
 				3AB1815D188F5AC800C9A04C /* FriendsViewController.m */,
 				3AB1815E188F5AC800C9A04C /* FriendsViewController.xib */,
@@ -500,6 +522,8 @@
 		3AD0A589188F63FA00B7B892 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3A1E191218962CD7002FEC60 /* User.h */,
+				3A1E191318962CD7002FEC60 /* User.m */,
 				3AD0A5A9188F642300B7B892 /* Friend.h */,
 				3AD0A5AA188F642300B7B892 /* Friend.m */,
 				3AD0A5AB188F642300B7B892 /* Picture.h */,
@@ -512,6 +536,8 @@
 		3AD0A58C188F63FA00B7B892 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				3A1E190D18962CC4002FEC60 /* UserCD.h */,
+				3A1E190E18962CC4002FEC60 /* UserCD.m */,
 				3AD0A58D188F63FA00B7B892 /* FriendCD.h */,
 				3AD0A58E188F63FA00B7B892 /* FriendCD.m */,
 				3AD0A58F188F63FA00B7B892 /* PictureCD.h */,
@@ -621,6 +647,7 @@
 				3A59FD511883A7C10078AE67 /* InfoPlist.strings in Resources */,
 				3AB18164188F5AC800C9A04C /* FriendsViewController.xib in Resources */,
 				3A549A141883B76B0022410C /* Localizable.strings in Resources */,
+				3A1E190718962AE4002FEC60 /* UserInfoViewController.xib in Resources */,
 				3A59FD521883A7C10078AE67 /* Images.xcassets in Resources */,
 				3A59FD6A1883AA760078AE67 /* LoginViewController.xib in Resources */,
 			);
@@ -633,6 +660,7 @@
 				3AA329CE18839EFC00548901 /* InfoPlist.strings in Resources */,
 				3AB18162188F5AC800C9A04C /* FriendsViewController.xib in Resources */,
 				3A549A131883B76B0022410C /* Localizable.strings in Resources */,
+				3A1E190518962AE4002FEC60 /* UserInfoViewController.xib in Resources */,
 				3AA329D918839EFC00548901 /* Images.xcassets in Resources */,
 				3A59FD681883AA760078AE67 /* LoginViewController.xib in Resources */,
 			);
@@ -643,6 +671,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A59FD691883AA760078AE67 /* LoginViewController.xib in Resources */,
+				3A1E190618962AE4002FEC60 /* UserInfoViewController.xib in Resources */,
 				3AA329EB18839EFC00548901 /* InfoPlist.strings in Resources */,
 				3AB18163188F5AC800C9A04C /* FriendsViewController.xib in Resources */,
 			);
@@ -718,15 +747,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A1E191618962CD7002FEC60 /* User.m in Sources */,
 				3AD0A5AF188F642300B7B892 /* Friend.m in Sources */,
 				3AB1816A188F5CAA00C9A04C /* FriendTableCellView.m in Sources */,
 				3A59FD321883A7C10078AE67 /* UIView+Animation.m in Sources */,
 				3A59FD341883A7C10078AE67 /* UIColor+Hex.m in Sources */,
 				3A59FD351883A7C10078AE67 /* UIView+Size.m in Sources */,
+				3A1E190418962AE4002FEC60 /* UserInfoViewController.m in Sources */,
 				3A59FD361883A7C10078AE67 /* UncaughtExceptionHandler.mm in Sources */,
 				3AD0A5B2188F642300B7B892 /* Picture.m in Sources */,
 				3AD0A59F188F63FA00B7B892 /* PictureCD.m in Sources */,
 				3A59FD371883A7C10078AE67 /* UIImage+RoundedCorner.m in Sources */,
+				3A1E191118962CC4002FEC60 /* UserCD.m in Sources */,
 				3AD0A59C188F63FA00B7B892 /* FriendCD.m in Sources */,
 				3A59FD381883A7C10078AE67 /* UIImage+Optimize.m in Sources */,
 				3A59FD391883A7C10078AE67 /* KVCUtils.m in Sources */,
@@ -754,15 +786,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A1E191418962CD7002FEC60 /* User.m in Sources */,
 				3AD0A5AD188F642300B7B892 /* Friend.m in Sources */,
 				3AB18168188F5CAA00C9A04C /* FriendTableCellView.m in Sources */,
 				3AA32A4818839F3F00548901 /* UIView+Animation.m in Sources */,
 				3AA32A3E18839F3F00548901 /* UIColor+Hex.m in Sources */,
 				3AA32A4E18839F3F00548901 /* UIView+Size.m in Sources */,
+				3A1E190218962AE4002FEC60 /* UserInfoViewController.m in Sources */,
 				3AA32A6618839FE600548901 /* UncaughtExceptionHandler.mm in Sources */,
 				3AD0A5B0188F642300B7B892 /* Picture.m in Sources */,
 				3AD0A59D188F63FA00B7B892 /* PictureCD.m in Sources */,
 				3AA32A4618839F3F00548901 /* UIImage+RoundedCorner.m in Sources */,
+				3A1E190F18962CC4002FEC60 /* UserCD.m in Sources */,
 				3AD0A59A188F63FA00B7B892 /* FriendCD.m in Sources */,
 				3AA32A4218839F3F00548901 /* UIImage+Optimize.m in Sources */,
 				3AA32A5618839F3F00548901 /* KVCUtils.m in Sources */,
@@ -795,6 +830,7 @@
 				3A59FD6F1883AAA70078AE67 /* BaseViewController.m in Sources */,
 				3AD0A5AE188F642300B7B892 /* Friend.m in Sources */,
 				3AA32A4B18839F3F00548901 /* UIView+Positioning.m in Sources */,
+				3A1E190318962AE4002FEC60 /* UserInfoViewController.m in Sources */,
 				3AA32A4318839F3F00548901 /* UIImage+Optimize.m in Sources */,
 				3AA32A5918839F3F00548901 /* CustomUIApplication.mm in Sources */,
 				3AA32A5118839F3F00548901 /* UIViewController+Container.m in Sources */,
@@ -809,6 +845,8 @@
 				3AA32A6718839FE600548901 /* UncaughtExceptionHandler.mm in Sources */,
 				3AB1815A188F595500C9A04C /* FacebookManager.m in Sources */,
 				3AA32A3F18839F3F00548901 /* UIColor+Hex.m in Sources */,
+				3A1E191518962CD7002FEC60 /* User.m in Sources */,
+				3A1E191018962CC4002FEC60 /* UserCD.m in Sources */,
 				3AA32A4518839F3F00548901 /* UIImage+Resize.m in Sources */,
 				3AA32A4918839F3F00548901 /* UIView+Animation.m in Sources */,
 				3A59FD661883AA760078AE67 /* LoginViewController.m in Sources */,
