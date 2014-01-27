@@ -53,6 +53,7 @@ static NSString *CellIdentifier = @"_FriendTableCellView";
 
 -(void)setupUI
 {
+    self.navigationItem.title = LSTR(@"Friends");
     [self createTableView];
     
     [self loadData];

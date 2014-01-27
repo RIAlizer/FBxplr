@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
 #import "FacebookSDK.h"
+#import "UIView+RoundCorners.h"
+
 @interface LoginViewController : BaseViewController<FBLoginViewDelegate>
 {
     
@@ -16,6 +18,7 @@
 @property (MB_STRONG) IBOutlet FBLoginView *loginButtonView;
 @property (MB_STRONG) IBOutlet FBProfilePictureView *profilePictureView;
 @property (MB_STRONG) IBOutlet UILabel *labelName;
+@property (retain, nonatomic) IBOutlet UIButton *buttonNext;
 - (IBAction)pushNextView:(id)sender;
 
 @end

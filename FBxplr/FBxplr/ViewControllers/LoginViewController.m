@@ -21,6 +21,7 @@
 
 -(void)dealloc
 {
+    [_buttonNext release];
     RELEASE_OBJ(_profilePictureView);
     RELEASE_OBJ(_labelName);
     
@@ -54,9 +55,10 @@
      [languages insertObject:@"it" atIndex:0]; // ISO639-1
      [[NSUserDefaults standardUserDefaults] synchronize];
      */
-    self.navigationController.navigationItem.title = LSTR(@"Login");
+    self.navigationItem.title = LSTR(@"Login");
     self.loginButtonView.delegate = self;
-    
+    self.buttonNext.hidden = YES;
+    [self.buttonNext setRoundCorners];
     /*
      NSArray *permissions = @[
      @"user_likes",
@@ -87,6 +89,7 @@
 {
     self.profilePictureView.profileID = user.id;
     self.labelName.text = [NSString stringWithFormat:LSTR(@"Welcome %@"),user.name];
+    self.buttonNext.hidden = NO;
 }
 
 

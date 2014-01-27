@@ -28,6 +28,7 @@
     
     LoginViewController * loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
     UINavigationController * mainNavigationController  = [[UINavigationController alloc] initWithRootViewController:loginViewController];
+
     RELEASE_OBJ(loginViewController);
     self.window.rootViewController = mainNavigationController;
     RELEASE_OBJ(mainNavigationController);
