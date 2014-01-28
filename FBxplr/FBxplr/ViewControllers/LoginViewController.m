@@ -157,7 +157,7 @@
 - (void)loginViewShowingLoggedInUser:(FBLoginView *)loginView
 {
   
-    
+    self.navigationItem.title = LSTR(@"Welcome");
     
     CGPoint newPosition = CGPointMake(55, 400);
     [self.loginButtonView moveTo:newPosition duration:DEFAULT_FADE_IN_DURATION option:UIViewAnimationOptionCurveEaseIn delegate:self callback:@selector(showUserUI)];
@@ -170,6 +170,7 @@
 //        _firstLoad = NO;
 //        return;
 //    }
+    self.navigationItem.title = LSTR(@"Login");
     CGPoint newPosition = CGPointMake(55, 100);
     [self.loginButtonView moveTo:newPosition duration:DEFAULT_FADE_OUT_DURATION option:UIViewAnimationOptionCurveEaseOut delegate:self callback:@selector(hideUserUI)];
 }

@@ -19,7 +19,7 @@
         _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, imageViewWidth, imageViewWidth)];
         _imageView.layer.cornerRadius = 10;
         _imageView.contentMode = UIViewContentModeScaleAspectFit;
-
+        
         [self.contentView addSubview:_imageView];
         // RELEASE_OBJ(_imageView);
         

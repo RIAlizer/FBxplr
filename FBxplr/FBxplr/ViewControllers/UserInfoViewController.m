@@ -11,12 +11,13 @@
 #import "UITableViewCell+FlatUI.h"
 #import "TPKeyboardAvoidingTableView.h"
 
-@interface UserInfoViewController ()
 
-
-@property (MB_STRONG) NSArray * items;
-@property (MB_STRONG) FBProfilePictureView *expandZoomImageView;
-@end
+//#define kIndex_name 0
+#define kIndex_first_name   0
+#define kIndex_last_name    1
+#define kIndex_username     2
+#define kIndex_middle_name  3
+#define kIndex_link         4
 
 
 static NSString *CellIdentifier = @"_UserInfoViewController";
@@ -34,8 +35,8 @@ static CGFloat kImageZoomHeight = 120.f;
 -(void)dealloc
 {
     
-   
-     RELEASE_OBJ(_tableView);
+    RELEASE_OBJ(_expandZoomImageView);
+    RELEASE_OBJ(_tableView);
     RELEASE_OBJ(_items);
     SUPER_DEALLOC();
 }
@@ -62,47 +63,46 @@ static CGFloat kImageZoomHeight = 120.f;
     self.navigationItem.title = LSTR(@"Info");
     
     self.edgesForExtendedLayout = UIRectEdgeNone;
- 
-    /*
-    UIBarButtonItem *buttonSave = [[UIBarButtonItem alloc] initWithTitle:LSTR(@"Save") style:UIBarButtonItemStyleBordered target:self action:@selector(buttonSaveClicked:)];
-    self.navigationItem.rightBarButtonItem = buttonSave;
-    RELEASE_OBJ(buttonSave);
-    */
+    
     
     
     [self createTableView];
     
-   // self.expandZoomImageView = [[FBProfilePictureView alloc] initWithFrame:CGRectMake(0, -kImageZoomHeight, self.view.size.width, kImageZoomHeight)];
-     self.expandZoomImageView = [[FBProfilePictureView alloc] initWithFrame:CGRectMake(0, 0, self.view.size.width, kImageZoomHeight)];
-
-    self.tableView.tableHeaderView = self.expandZoomImageView;
+    // self.expandZoomImageView = [[FBProfilePictureView alloc] initWithFrame:CGRectMake(0, -kImageZoomHeight, self.view.size.width, kImageZoomHeight)];
+    self.expandZoomImageView = [[FBProfilePictureView alloc] initWithFrame:CGRectMake(0, 0, self.view.size.width, kImageZoomHeight)];
+    //    self.tableView.contentInset = UIEdgeInsetsMake(kImageZoomHeight, 0, 0, 0);
+    //  [self.tableView addSubview:self.expandZoomImageView];
+    
+    
     self.expandZoomImageView.profileID = [AppManager sharedInstance].currentUser.uid;
     self.expandZoomImageView.contentMode = UIViewContentModeScaleAspectFill;
-//    self.tableView.contentInset = UIEdgeInsetsMake(kImageZoomHeight, 0, 0, 0);
-  //  [self.tableView addSubview:self.expandZoomImageView];
+    
+    self.tableView.tableHeaderView = self.expandZoomImageView;
+    
     
     
     UIView *viewFooter = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 100)];
     
-    FUIButton * buttonSave = [[FUIButton alloc] initWithFrame:CGRectMake(0, 0, 300, 44)];
-    
     //buttonSave
-
-buttonSave.buttonColor = [UIColor turquoiseColor];
-buttonSave.shadowColor = [UIColor greenSeaColor];
-buttonSave.shadowHeight = 3.0f;
-buttonSave.cornerRadius = 6.0f;
-buttonSave.titleLabel.font = [UIFont boldFlatFontOfSize:16];
+    FUIButton * buttonSave = [[FUIButton alloc] initWithFrame:CGRectMake(60, 10, 200, 44)];
+    [buttonSave setTitle: LSTR(@"Save") forState:UIControlStateNormal];
+    buttonSave.buttonColor = [UIColor turquoiseColor];
+    buttonSave.shadowColor = [UIColor greenSeaColor];
+    buttonSave.shadowHeight = 3.0f;
+    buttonSave.cornerRadius = 6.0f;
+    buttonSave.titleLabel.font = [UIFont boldFlatFontOfSize:16];
     [buttonSave setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
     [buttonSave setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted];
     [viewFooter addSubview:buttonSave];
     [buttonSave addTarget:self action:@selector(buttonSaveClicked:) forControlEvents:UIControlEventTouchUpInside];
-    buttonSave.titleLabel.text = LSTR(@"Save");
+    
     
     RELEASE_OBJ(buttonSave);
     
     self.tableView.tableFooterView = viewFooter;
     RELEASE_OBJ(viewFooter);
+    
+    
     [self loadData];
     
 }
@@ -110,7 +110,14 @@ buttonSave.titleLabel.font = [UIFont boldFlatFontOfSize:16];
 -(void)buttonSaveClicked:(id)sender
 {
     ULog(@"SAVED");
+    
+    User * clone = [self cloneUserFromUI];
+    
+    ALog(@"%@",clone.first_name);
+    
+    
 }
+
 -(void)updateUI
 {
     [self.tableView reloadData];
@@ -118,34 +125,30 @@ buttonSave.titleLabel.font = [UIFont boldFlatFontOfSize:16];
 
 -(void)createTableView
 {
- 
+    
     // Register Class for Cell Reuse Identifier
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CellIdentifier];
+    [self.tableView registerClass:[TextFieldTableCellView class] forCellReuseIdentifier:CellIdentifier];
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, self.bottomLayoutGuide.length, 0);
-
+    
     
     if ([self.tableView respondsToSelector:@selector(setSeparatorInset:)]) {
         [self.tableView setSeparatorInset:UIEdgeInsetsZero];
     }
     self.tableView.rowHeight = 44;
+    self.tableView.allowsSelection = NO;
     //self.tableView.backgroundColor = [UIColor clearColor ];
-      
+    
     
     
 }
 
-//#define kIndex_name 0
-#define kIndex_first_name   0
-#define kIndex_last_name    1
-#define kIndex_username     2
-#define kIndex_middle_name  3
-#define kIndex_link         4
+
 
 
 -(void)loadData
 {
     [self showActivity];
-
+    
     
     
     NSMutableArray * array = [[NSMutableArray alloc] initWithCapacity:0];
@@ -158,11 +161,14 @@ buttonSave.titleLabel.font = [UIFont boldFlatFontOfSize:16];
     
     
     
-    
+    if(self.items)
+    {
+        RELEASE_OBJ(_items);
+    }
     self.items = [[NSArray alloc] initWithArray:array];
-
+    
     RELEASE_OBJ(array);
-
+    
     [self updateUI];
     [self hideActivity];
     
@@ -170,17 +176,17 @@ buttonSave.titleLabel.font = [UIFont boldFlatFontOfSize:16];
 }
 
 /**
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    CGFloat yOffset  = scrollView.contentOffset.y;
-    if (yOffset < -kImageZoomHeight)
-    {
-        CGRect f = self.expandZoomImageView.frame;
-        f.origin.y = yOffset;
-        f.size.height =  -yOffset;
-        self.expandZoomImageView.frame = f;
-    }
-}
-**/
+ - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+ CGFloat yOffset  = scrollView.contentOffset.y;
+ if (yOffset < -kImageZoomHeight)
+ {
+ CGRect f = self.expandZoomImageView.frame;
+ f.origin.y = yOffset;
+ f.size.height =  -yOffset;
+ self.expandZoomImageView.frame = f;
+ }
+ }
+ **/
 
 #pragma mark - UITableVieDataSource
 
@@ -197,74 +203,60 @@ buttonSave.titleLabel.font = [UIFont boldFlatFontOfSize:16];
     
 }
 
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
     
-    //Friend * friend = [self.items objectAtIndex: indexPath.row ];
     
     NSString * itemKey = [self.items objectAtIndex: indexPath.row ];
     
     User * user = [AppManager sharedInstance].currentUser;
     
     SEL  keySelector = NSSelectorFromString(itemKey);
-    UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-
+    
+    TextFieldTableCellView *cell = (TextFieldTableCellView *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     // Configure Cell
     if([user respondsToSelector:keySelector]){
-        cell.textLabel.frame = CGRectMake(0, 0, 70, 44);
-        cell.textLabel.adjustsFontSizeToFitWidth = YES;
-        cell.textLabel.font = [UIFont boldFlatFontOfSize:11];;
-        cell.textLabel.text = itemKey;
-        UITextField * textField = [[UITextField alloc] initWithFrame:CGRectMake(80, 0, cell.frame.size.width-88, 44)];
-        textField.delegate = self;
-        textField.text = [user performSelector:keySelector];
-        textField.textColor = [UIColor blackColor];
-        textField.font = [UIFont flatFontOfSize:12];
-        textField.backgroundColor = [UIColor cloudsColor];
-        textField.borderStyle = UITextBorderStyleRoundedRect;
-        textField.layer.borderColor = [UIColor colorWithHex:0xcccccc].CGColor;
-        textField.layer.borderWidth = 1;
-        [cell.contentView addSubview:textField];
-        RELEASE_OBJ(textField);
+        cell.labelTitle.text =itemKey;
+        cell.textField.text = [user performSelector:keySelector];;
+        cell.textField.delegate = self;
+        
     }
-//    cell.detailTextLabel.text = item.k
-
     return cell;
     
 }
 
 
 
+-(NSString*)getTextFromTextFieldAtCellIndex:(int)index
+{
+    TextFieldTableCellView *cell = (TextFieldTableCellView*)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
+    return cell.textField.text;
+    
+}
 
-/*
- - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
- {
- 
- 
- Friend * friend = [self.items objectAtIndex: indexPath.row ];
- 
- 
- FriendTableCellView *cell = (FriendTableCellView *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
- // Configure Cell
- 
- 
- // Set the data for this cell:
- [cell setItem:friend];
- 
- 
- return cell;
- 
- }
- 
- 
- #pragma mark - UITableViewDelegate
- - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
- {
- Friend * friend = [self.items objectAtIndex: indexPath.row ];
- ULog(@"id: %@", friend.uid);
- }
- */
+-(User*)cloneUserFromUI
+{
+    User * clone = [AppManager sharedInstance].currentUser;
+
+    clone.first_name = [self getTextFromTextFieldAtCellIndex:kIndex_first_name];
+    clone.last_name = [self getTextFromTextFieldAtCellIndex:kIndex_last_name];
+    clone.username = [self getTextFromTextFieldAtCellIndex:kIndex_username];
+    clone.middle_name = [self getTextFromTextFieldAtCellIndex:kIndex_middle_name];
+    clone.link = [self getTextFromTextFieldAtCellIndex:kIndex_link];
+    
+    return clone;
+}
+
+
+#pragma mark - UITextFieldDelegate
+
+-(BOOL) textFieldShouldReturn: (UITextField *) textField {
+    [textField resignFirstResponder];
+    return YES;
+}
 
 
 @end

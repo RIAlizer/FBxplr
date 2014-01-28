@@ -19,6 +19,12 @@
 		3A1E191418962CD7002FEC60 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1E191318962CD7002FEC60 /* User.m */; };
 		3A1E191518962CD7002FEC60 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1E191318962CD7002FEC60 /* User.m */; };
 		3A1E191618962CD7002FEC60 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1E191318962CD7002FEC60 /* User.m */; };
+		3A2275851897AFEF00F98D7C /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2275841897AFEF00F98D7C /* CoreDataManager.m */; };
+		3A2275861897AFEF00F98D7C /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2275841897AFEF00F98D7C /* CoreDataManager.m */; };
+		3A2275871897AFEF00F98D7C /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2275841897AFEF00F98D7C /* CoreDataManager.m */; };
+		3A22758A1897B41800F98D7C /* TextFieldTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2275891897B41800F98D7C /* TextFieldTableCellView.m */; };
+		3A22758B1897B41800F98D7C /* TextFieldTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2275891897B41800F98D7C /* TextFieldTableCellView.m */; };
+		3A22758C1897B41800F98D7C /* TextFieldTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2275891897B41800F98D7C /* TextFieldTableCellView.m */; };
 		3A549A131883B76B0022410C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A549A161883B76B0022410C /* Localizable.strings */; };
 		3A549A141883B76B0022410C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A549A161883B76B0022410C /* Localizable.strings */; };
 		3A59FD321883A7C10078AE67 /* UIView+Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA32A1618839F3E00548901 /* UIView+Animation.m */; };
@@ -152,6 +158,10 @@
 		3A1E190E18962CC4002FEC60 /* UserCD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCD.m; sourceTree = "<group>"; };
 		3A1E191218962CD7002FEC60 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		3A1E191318962CD7002FEC60 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		3A2275831897AFEF00F98D7C /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
+		3A2275841897AFEF00F98D7C /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
+		3A2275881897B41800F98D7C /* TextFieldTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldTableCellView.h; sourceTree = "<group>"; };
+		3A2275891897B41800F98D7C /* TextFieldTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldTableCellView.m; sourceTree = "<group>"; };
 		3A549A151883B76B0022410C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3A549A171883B7EB0022410C /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3A59FD571883A7C10078AE67 /* FBxplr copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FBxplr copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -504,6 +514,8 @@
 				3AD0A589188F63FA00B7B892 /* Model */,
 				3AB18157188F595500C9A04C /* FacebookManager.h */,
 				3AB18158188F595500C9A04C /* FacebookManager.m */,
+				3A2275831897AFEF00F98D7C /* CoreDataManager.h */,
+				3A2275841897AFEF00F98D7C /* CoreDataManager.m */,
 				3AA32A5B18839FA000548901 /* AppManager.h */,
 				3AA32A5C18839FA000548901 /* AppManager.m */,
 			);
@@ -513,6 +525,8 @@
 		3AB18165188F5C8400C9A04C /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				3A2275881897B41800F98D7C /* TextFieldTableCellView.h */,
+				3A2275891897B41800F98D7C /* TextFieldTableCellView.m */,
 				3AB18166188F5CAA00C9A04C /* FriendTableCellView.h */,
 				3AB18167188F5CAA00C9A04C /* FriendTableCellView.m */,
 			);
@@ -772,8 +786,10 @@
 				3A59FD701883AAA70078AE67 /* BaseViewController.m in Sources */,
 				3A59FD411883A7C10078AE67 /* AppDelegate.m in Sources */,
 				3A59FD421883A7C10078AE67 /* NSMutableArray+Shuffle.m in Sources */,
+				3A22758C1897B41800F98D7C /* TextFieldTableCellView.m in Sources */,
 				3A59FD431883A7C10078AE67 /* FBxplr.xcdatamodeld in Sources */,
 				3A59FD441883A7C10078AE67 /* UIImage+Alpha.m in Sources */,
+				3A2275871897AFEF00F98D7C /* CoreDataManager.m in Sources */,
 				3A59FD461883A7C10078AE67 /* UIImage+Resize.m in Sources */,
 				3A59FD471883A7C10078AE67 /* NSMutableAttributedString+Attributes.m in Sources */,
 				3AB1815B188F595500C9A04C /* FacebookManager.m in Sources */,
@@ -811,8 +827,10 @@
 				3A59FD6E1883AAA70078AE67 /* BaseViewController.m in Sources */,
 				3AA329D418839EFC00548901 /* AppDelegate.m in Sources */,
 				3AA32A3218839F3F00548901 /* NSMutableArray+Shuffle.m in Sources */,
+				3A22758A1897B41800F98D7C /* TextFieldTableCellView.m in Sources */,
 				3AA329D718839EFC00548901 /* FBxplr.xcdatamodeld in Sources */,
 				3AA32A4018839F3F00548901 /* UIImage+Alpha.m in Sources */,
+				3A2275851897AFEF00F98D7C /* CoreDataManager.m in Sources */,
 				3AA32A4418839F3F00548901 /* UIImage+Resize.m in Sources */,
 				3AA32A6A1883A11600548901 /* NSMutableAttributedString+Attributes.m in Sources */,
 				3AB18159188F595500C9A04C /* FacebookManager.m in Sources */,
@@ -854,7 +872,9 @@
 				3AD0A59E188F63FA00B7B892 /* PictureCD.m in Sources */,
 				3AA32A5718839F3F00548901 /* KVCUtils.m in Sources */,
 				3AA32A3918839F3F00548901 /* NSDictionary+UrlEncoding.m in Sources */,
+				3A2275861897AFEF00F98D7C /* CoreDataManager.m in Sources */,
 				3AD0A59B188F63FA00B7B892 /* FriendCD.m in Sources */,
+				3A22758B1897B41800F98D7C /* TextFieldTableCellView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
