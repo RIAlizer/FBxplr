@@ -8,7 +8,7 @@
 
 
 #import "SingletonHelper.h"
-
+#import "CoreDataManager.h"
 #import "KVCUtils.h"
 #import "User.h"
 
