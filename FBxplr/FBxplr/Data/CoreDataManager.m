@@ -22,10 +22,16 @@
 
 SYNTHESIZE_SINGLETON_FOR_CLASS(CoreDataManager);
 
-#pragma mark - Data
+#pragma mark - Object lifecycle
 
+- (void)dealloc
+{
+    RELEASE_OBJ(_persistentStoreCoordinator);
+    RELEASE_OBJ(_managedObjectContext);
+    RELEASE_OBJ(_managedObjectModel);
+    SUPER_DEALLOC();
+}
 
- 
 
 #pragma mark - CoreData Utility
 //Erase the persistent store from coordinator
@@ -63,6 +69,9 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CoreDataManager);
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:self.managedObjectContext];
+    
+    [request setReturnsObjectsAsFaults:NO];
+    
     [request setEntity:entity];
     // retrive the objects with a given value for a certain property
     //NSPredicate *predicate = [NSPredicate predicateWithFormat: @"uid == %@", uid];
@@ -97,7 +106,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CoreDataManager);
         }
     }
     @catch (NSException *exception) {
-         
+        
         [AppManager showException:exception];
     }
     return nil;
@@ -219,14 +228,136 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CoreDataManager);
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
-#pragma mark - Object lifecycle
 
-- (void)dealloc
+
+#pragma mark - Data
+
+-(BOOL)saveUser:(User*)user
 {
-    RELEASE_OBJ(_persistentStoreCoordinator);
-    RELEASE_OBJ(_managedObjectContext);
-    RELEASE_OBJ(_managedObjectModel);
-    SUPER_DEALLOC();
+    
+    NSParameterAssert(user);
+    
+
+    
+    //check if exists
+    NSPredicate *predicate = [NSPredicate predicateWithFormat: @"uid == %@ ", user.uid];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"uid" ascending:NO];
+    
+    NSArray * result = [self fetchEntitiesForName:@"UserCD" withPredicate:predicate andSortDescriptor:sortDescriptor];
+    RELEASE(sortDescriptor);
+    ALog(@"predicate: %@",[predicate description]);
+    BOOL exists = !IsEmpty(result);
+    UserCD * userCD ;
+    if(exists)
+    {
+         userCD = (UserCD*)[result lastObject];
+        
+        if([result count]>1)
+        {
+            LogError(@"Multiple User founded for %@",[predicate description]);
+             return NO;
+        }
+       
+    }
+    else
+    {
+        ALog(@"adding new User...");
+         userCD = (UserCD *) [NSEntityDescription insertNewObjectForEntityForName:@"UserCD" inManagedObjectContext:self.managedObjectContext];
+     
+      
+        
+    }
+    
+    if(!userCD){
+        ULog(@"User not exist");
+        return NO;
+    }
+    
+    //mapping
+    userCD.last_update = [NSDate date];
+    userCD.uid = user.uid;
+    userCD.first_name = user.first_name;
+    userCD.username = user.username;
+    userCD.last_name = user.last_name;
+    userCD.name = user.name;
+    userCD.birthday = user.birthday;
+    userCD.middle_name = user.middle_name;
+    userCD.link = user.link;
+    
+    
+    BOOL success = [self saveContext];
+    if(!success)
+    {
+        ULog(@"Unexpected Error during context save");
+    }
+    
+    return success;
+    
 }
+
+-(UserCD*)getUserWithUID:(NSString*)uid
+{
+    UserCD * userCD = nil;
+
+    
+    //check if exists
+    NSPredicate *predicate = [NSPredicate predicateWithFormat: @"uid == %@ ", uid];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"uid" ascending:NO];
+    
+    NSArray * result = [self fetchEntitiesForName:@"UserCD" withPredicate:predicate andSortDescriptor:sortDescriptor];
+    RELEASE(sortDescriptor);
+    ALog(@"predicate: %@",[predicate description]);
+    BOOL exists = !IsEmpty(result);
+   
+    if(exists)
+    {
+        userCD = (UserCD*)[result lastObject];
+        
+        if([result count]>1)
+        {
+            LogError(@"Multiple User founded for %@",[predicate description]);
+            return NO;
+        }
+        
+    }
+    
+    
+    return userCD;
+}
+
+/*
+ //Featch database records
+ - (void)fetchPresentations
+ {
+ 
+ NSEntityDescription *entity = [NSEntityDescription entityForName:@"CDPresentation" inManagedObjectContext:self.managedObjectContext];
+ 
+ //Setup the fetch request
+ NSFetchRequest *request = [[NSFetchRequest alloc] init];
+ [request setEntity:entity];
+ 
+ //  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(lastName like %@) AND (birthday > %@)", lastNameSearchString, birthdaySearchDate];
+ 
+ //apply sort
+ NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"lastUpdate" ascending:NO];
+ NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+ [request setSortDescriptors:sortDescriptors];
+ RELEASE(sortDescriptor );
+ // Fetch the records and handle an error
+ NSError *error = nil;
+ NSMutableArray *mutableFetchResults = [[self.managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
+ if (error)
+ {
+ // Handle the error.
+ // This is a serious error and should advise the user to restart the application
+ ULog(@"ERROR during fetchRecords %@", [error localizedDescription]);
+ }
+ // Save our fetched data to an array
+ [[VTAppManager sharedInstance] setStoredPresentationList:mutableFetchResults];
+ 
+ RELEASE(mutableFetchResults);
+ RELEASE(request);
+ }
+ */
 
 @end

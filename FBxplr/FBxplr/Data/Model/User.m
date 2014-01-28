@@ -47,6 +47,7 @@
     }
     return self;
 }
+
 - (instancetype)copyWithZone:(NSZone *)zone
 {
     id copy = [[[self class] alloc] init];

@@ -72,6 +72,14 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(AppManager);
     
 }
 
+-(BOOL)saveUser:(User*)user
+{
+    BOOL saved = [[CoreDataManager sharedInstance] saveUser:user];
+    if(saved)
+        self.currentUser = user;
+    return saved;
+    
+}
 #pragma mark - Object lifecycle
 
 - (void)dealloc

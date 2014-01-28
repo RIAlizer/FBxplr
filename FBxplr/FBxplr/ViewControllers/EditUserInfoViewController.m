@@ -1,12 +1,12 @@
 //
-//  UserInfoViewController.m
+//  EditUserInfoViewController.m
 //  FBxplr
 //
 //  Created by andrea gonteri on 27/01/14.
 //  Copyright (c) 2014 rializer. All rights reserved.
 //
 
-#import "UserInfoViewController.h"
+#import "EditUserInfoViewController.h"
 #import "UIImage+FlatUI.h"
 #import "UITableViewCell+FlatUI.h"
 #import "TPKeyboardAvoidingTableView.h"
@@ -20,11 +20,11 @@
 #define kIndex_link         4
 
 
-static NSString *CellIdentifier = @"_UserInfoViewController";
+static NSString *CellIdentifier = @"_EditUserInfoViewController";
 static CGFloat kImageZoomHeight = 120.f;
 
 
-@implementation UserInfoViewController
+@implementation EditUserInfoViewController
 
 - (void)didReceiveMemoryWarning
 {
@@ -58,26 +58,11 @@ static CGFloat kImageZoomHeight = 120.f;
     [self setupUI];
 }
 
--(void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    
-    if(self.tableView){
-        [self loadData];
-    }
-    
-}
-
 -(void)setupUI
 {
     self.navigationItem.title = LSTR(@"Info");
     
     self.edgesForExtendedLayout = UIRectEdgeNone;
-    
-    
-    UIBarButtonItem *buttonSave = [[UIBarButtonItem alloc] initWithTitle:LSTR(@"Edit") style:UIBarButtonItemStyleBordered target:self action:@selector(buttonEditClicked:)];
-    self.navigationItem.rightBarButtonItem = buttonSave;
-    RELEASE_OBJ(buttonSave);
     
     
     
@@ -96,12 +81,79 @@ static CGFloat kImageZoomHeight = 120.f;
     
     
     
+    UIView *viewFooter = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 100)];
+    
+    //buttonSave
+    FUIButton * buttonSave = [[FUIButton alloc] initWithFrame:CGRectMake(60, 10, 200, 44)];
+    [buttonSave setTitle: LSTR(@"Save") forState:UIControlStateNormal];
+    buttonSave.buttonColor = [UIColor turquoiseColor];
+    buttonSave.shadowColor = [UIColor greenSeaColor];
+    buttonSave.shadowHeight = 3.0f;
+    buttonSave.cornerRadius = 6.0f;
+    buttonSave.titleLabel.font = [UIFont boldFlatFontOfSize:16];
+    [buttonSave setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
+    [buttonSave setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted];
+    [viewFooter addSubview:buttonSave];
+    [buttonSave addTarget:self action:@selector(buttonSaveClicked:) forControlEvents:UIControlEventTouchUpInside];
     
     
-    [self updateUI];
+    RELEASE_OBJ(buttonSave);
+    
+    self.tableView.tableFooterView = viewFooter;
+    RELEASE_OBJ(viewFooter);
+    
+    
+    [self loadData];
+    
+}
+
+-(void)buttonSaveClicked:(id)sender
+{
+    
+    [self showActivity];
+    
+    User * clone = [self cloneUserFromUI];
+    
+    ALog(@"%@",clone.first_name);
+    
+    BOOL saved =  [[AppManager sharedInstance] saveUser:clone];
+   
+    [self hideActivity];
+    
+    if(saved){
+        ULog(@"User saved");
+    }
+    else{
+        ULog(@"User not saved");
+    }
+}
+
+-(void)updateUI
+{
+    [self.tableView reloadData];
+}
+
+-(void)createTableView
+{
+    
+    // Register Class for Cell Reuse Identifier
+    [self.tableView registerClass:[TextFieldTableCellView class] forCellReuseIdentifier:CellIdentifier];
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, self.bottomLayoutGuide.length, 0);
+    
+    
+    if ([self.tableView respondsToSelector:@selector(setSeparatorInset:)]) {
+        [self.tableView setSeparatorInset:UIEdgeInsetsZero];
+    }
+    self.tableView.rowHeight = 44;
+    self.tableView.allowsSelection = NO;
+    //self.tableView.backgroundColor = [UIColor clearColor ];
+    
     
     
 }
+
+
+
 
 -(void)loadData
 {
@@ -132,43 +184,6 @@ static CGFloat kImageZoomHeight = 120.f;
     
     
 }
-
--(void)buttonEditClicked:(id)sender
-{
-    
-    EditUserInfoViewController * editUserInfoViewController = [[ EditUserInfoViewController alloc] initWithNibName:@"EditUserInfoViewController" bundle:nil];
-    [self.navigationController pushViewController:editUserInfoViewController animated:YES];
-    RELEASE_OBJ(editUserInfoViewController);
-    
-}
-
--(void)updateUI
-{
-    [self.tableView reloadData];
-}
-
--(void)createTableView
-{
-    
-    // Register Class for Cell Reuse Identifier
-    [self.tableView registerClass:[TextFieldTableCellView class] forCellReuseIdentifier:CellIdentifier];
-    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, self.bottomLayoutGuide.length, 0);
-    
-    
-    if ([self.tableView respondsToSelector:@selector(setSeparatorInset:)]) {
-        [self.tableView setSeparatorInset:UIEdgeInsetsZero];
-    }
-    self.tableView.rowHeight = 44;
-    self.tableView.allowsSelection = NO;
-    //self.tableView.backgroundColor = [UIColor clearColor ];
-    
-    
-    
-}
-
-
-
-
 
 /**
  - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
@@ -215,9 +230,9 @@ static CGFloat kImageZoomHeight = 120.f;
     // Configure Cell
     if([user respondsToSelector:keySelector]){
         cell.labelTitle.text =itemKey;
-        cell.textField.text = [user performSelector:keySelector];
+        cell.textField.text = [user performSelector:keySelector];;
+        cell.textField.delegate = self;
         
-        [cell setTextFieldEnabled:NO];
     }
     return cell;
     
@@ -225,7 +240,33 @@ static CGFloat kImageZoomHeight = 120.f;
 
 
 
+-(NSString*)getTextFromTextFieldAtCellIndex:(int)index
+{
+    TextFieldTableCellView *cell = (TextFieldTableCellView*)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
+    return cell.textField.text;
+    
+}
 
-  
+-(User*)cloneUserFromUI
+{
+    User * clone = [[AppManager sharedInstance].currentUser copy];
+
+    clone.first_name = [self getTextFromTextFieldAtCellIndex:kIndex_first_name];
+    clone.last_name = [self getTextFromTextFieldAtCellIndex:kIndex_last_name];
+    clone.username = [self getTextFromTextFieldAtCellIndex:kIndex_username];
+    clone.middle_name = [self getTextFromTextFieldAtCellIndex:kIndex_middle_name];
+    clone.link = [self getTextFromTextFieldAtCellIndex:kIndex_link];
+    
+    return clone;
+}
+
+
+#pragma mark - UITextFieldDelegate
+
+-(BOOL) textFieldShouldReturn: (UITextField *) textField {
+    [textField resignFirstResponder];
+    return YES;
+}
+
 
 @end

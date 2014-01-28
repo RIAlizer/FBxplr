@@ -25,6 +25,12 @@
 		3A22758A1897B41800F98D7C /* TextFieldTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2275891897B41800F98D7C /* TextFieldTableCellView.m */; };
 		3A22758B1897B41800F98D7C /* TextFieldTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2275891897B41800F98D7C /* TextFieldTableCellView.m */; };
 		3A22758C1897B41800F98D7C /* TextFieldTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2275891897B41800F98D7C /* TextFieldTableCellView.m */; };
+		3A2275901897CDDE00F98D7C /* EditUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A22758E1897CDDE00F98D7C /* EditUserInfoViewController.m */; };
+		3A2275911897CDDE00F98D7C /* EditUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A22758E1897CDDE00F98D7C /* EditUserInfoViewController.m */; };
+		3A2275921897CDDE00F98D7C /* EditUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A22758E1897CDDE00F98D7C /* EditUserInfoViewController.m */; };
+		3A2275931897CDDE00F98D7C /* EditUserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A22758F1897CDDE00F98D7C /* EditUserInfoViewController.xib */; };
+		3A2275941897CDDE00F98D7C /* EditUserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A22758F1897CDDE00F98D7C /* EditUserInfoViewController.xib */; };
+		3A2275951897CDDE00F98D7C /* EditUserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A22758F1897CDDE00F98D7C /* EditUserInfoViewController.xib */; };
 		3A549A131883B76B0022410C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A549A161883B76B0022410C /* Localizable.strings */; };
 		3A549A141883B76B0022410C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A549A161883B76B0022410C /* Localizable.strings */; };
 		3A59FD321883A7C10078AE67 /* UIView+Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA32A1618839F3E00548901 /* UIView+Animation.m */; };
@@ -162,6 +168,9 @@
 		3A2275841897AFEF00F98D7C /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
 		3A2275881897B41800F98D7C /* TextFieldTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldTableCellView.h; sourceTree = "<group>"; };
 		3A2275891897B41800F98D7C /* TextFieldTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldTableCellView.m; sourceTree = "<group>"; };
+		3A22758D1897CDDE00F98D7C /* EditUserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditUserInfoViewController.h; sourceTree = "<group>"; };
+		3A22758E1897CDDE00F98D7C /* EditUserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditUserInfoViewController.m; sourceTree = "<group>"; };
+		3A22758F1897CDDE00F98D7C /* EditUserInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditUserInfoViewController.xib; sourceTree = "<group>"; };
 		3A549A151883B76B0022410C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3A549A171883B7EB0022410C /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3A59FD571883A7C10078AE67 /* FBxplr copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FBxplr copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -293,6 +302,9 @@
 				3A59FD621883AA760078AE67 /* LoginViewController.h */,
 				3A59FD631883AA760078AE67 /* LoginViewController.m */,
 				3A59FD641883AA760078AE67 /* LoginViewController.xib */,
+				3A22758D1897CDDE00F98D7C /* EditUserInfoViewController.h */,
+				3A22758E1897CDDE00F98D7C /* EditUserInfoViewController.m */,
+				3A22758F1897CDDE00F98D7C /* EditUserInfoViewController.xib */,
 				3A1E18FF18962AE4002FEC60 /* UserInfoViewController.h */,
 				3A1E190018962AE4002FEC60 /* UserInfoViewController.m */,
 				3A1E190118962AE4002FEC60 /* UserInfoViewController.xib */,
@@ -663,6 +675,7 @@
 				3A549A141883B76B0022410C /* Localizable.strings in Resources */,
 				3A1E190718962AE4002FEC60 /* UserInfoViewController.xib in Resources */,
 				3A59FD521883A7C10078AE67 /* Images.xcassets in Resources */,
+				3A2275951897CDDE00F98D7C /* EditUserInfoViewController.xib in Resources */,
 				3A59FD6A1883AA760078AE67 /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -676,6 +689,7 @@
 				3A549A131883B76B0022410C /* Localizable.strings in Resources */,
 				3A1E190518962AE4002FEC60 /* UserInfoViewController.xib in Resources */,
 				3AA329D918839EFC00548901 /* Images.xcassets in Resources */,
+				3A2275931897CDDE00F98D7C /* EditUserInfoViewController.xib in Resources */,
 				3A59FD681883AA760078AE67 /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -684,6 +698,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A2275941897CDDE00F98D7C /* EditUserInfoViewController.xib in Resources */,
 				3A59FD691883AA760078AE67 /* LoginViewController.xib in Resources */,
 				3A1E190618962AE4002FEC60 /* UserInfoViewController.xib in Resources */,
 				3AA329EB18839EFC00548901 /* InfoPlist.strings in Resources */,
@@ -790,6 +805,7 @@
 				3A59FD431883A7C10078AE67 /* FBxplr.xcdatamodeld in Sources */,
 				3A59FD441883A7C10078AE67 /* UIImage+Alpha.m in Sources */,
 				3A2275871897AFEF00F98D7C /* CoreDataManager.m in Sources */,
+				3A2275921897CDDE00F98D7C /* EditUserInfoViewController.m in Sources */,
 				3A59FD461883A7C10078AE67 /* UIImage+Resize.m in Sources */,
 				3A59FD471883A7C10078AE67 /* NSMutableAttributedString+Attributes.m in Sources */,
 				3AB1815B188F595500C9A04C /* FacebookManager.m in Sources */,
@@ -831,6 +847,7 @@
 				3AA329D718839EFC00548901 /* FBxplr.xcdatamodeld in Sources */,
 				3AA32A4018839F3F00548901 /* UIImage+Alpha.m in Sources */,
 				3A2275851897AFEF00F98D7C /* CoreDataManager.m in Sources */,
+				3A2275901897CDDE00F98D7C /* EditUserInfoViewController.m in Sources */,
 				3AA32A4418839F3F00548901 /* UIImage+Resize.m in Sources */,
 				3AA32A6A1883A11600548901 /* NSMutableAttributedString+Attributes.m in Sources */,
 				3AB18159188F595500C9A04C /* FacebookManager.m in Sources */,
@@ -856,6 +873,7 @@
 				3AB18160188F5AC800C9A04C /* FriendsViewController.m in Sources */,
 				3AA32A4118839F3F00548901 /* UIImage+Alpha.m in Sources */,
 				3AA32A4718839F3F00548901 /* UIImage+RoundedCorner.m in Sources */,
+				3A2275911897CDDE00F98D7C /* EditUserInfoViewController.m in Sources */,
 				3AA32A4F18839F3F00548901 /* UIView+Size.m in Sources */,
 				3AA32A4D18839F3F00548901 /* UIView+RoundCorners.m in Sources */,
 				3AA329ED18839EFC00548901 /* FBxplrTests.m in Sources */,

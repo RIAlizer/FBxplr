@@ -49,7 +49,17 @@
     // Configure the view for the selected state
 }
 
-
+-(void)setTextFieldEnabled:(BOOL)enabled
+{
+    if(!enabled){
+        self.textField.enabled = NO;
+        self.textField.backgroundColor = [UIColor clearColor];
+        self.textField.borderStyle = UITextBorderStyleNone;
+        self.textField.layer.borderWidth = 0;
+        self.textField.font = [UIFont boldFlatFontOfSize:11];
+        self.textField.textColor = [UIColor greenSeaColor];
+    }
+}
 
 
 @end

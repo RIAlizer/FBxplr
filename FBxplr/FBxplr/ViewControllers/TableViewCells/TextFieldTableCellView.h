@@ -17,4 +17,7 @@
 
 @property (MB_STRONG) UITextField * textField;
 @property (MB_STRONG) UILabel * labelTitle;
+
+-(void)setTextFieldEnabled:(BOOL)enabled;
+
 @end

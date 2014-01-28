@@ -1,5 +1,5 @@
 //
-//  UserInfoViewController.h
+//  EditUserInfoViewController.h
 //  FBxplr
 //
 //  Created by andrea gonteri on 27/01/14.
@@ -8,11 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
- 
+#import "FacebookManager.h"
 #import "TextFieldTableCellView.h"
-#import "EditUserInfoViewController.h"
 
-@interface UserInfoViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate>
+@interface EditUserInfoViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 {
     
 }

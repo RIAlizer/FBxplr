@@ -9,6 +9,7 @@
 
 #import "SingletonHelper.h"
 
+#import "User.h"
 #import "UserCD.h"
 #import "FriendCD.h"
 #import "PictureCD.h"
@@ -52,6 +53,7 @@
 -(void)resetCoreDataComponents;
 
 
- 
+-(BOOL)saveUser:(User*)user;
+-(UserCD*)getUserWithUID:(NSString*)uid;
 
 @end

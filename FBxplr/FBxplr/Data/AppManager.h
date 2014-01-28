@@ -45,7 +45,7 @@
 
 -(void)releaseResources;
 
-
+-(BOOL)saveUser:(User*)user;
 
 +(void)showError:(NSError*)error;
 +(void)showException:(NSException*)exception;
