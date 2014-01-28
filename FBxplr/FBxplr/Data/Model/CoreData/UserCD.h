@@ -20,5 +20,5 @@
 @property (nonatomic, retain) NSString * username;
 @property (nonatomic, retain) NSString * link;
 @property (nonatomic, retain) NSString * birthday;
-
+@property (nonatomic, retain) NSDate * last_update;
 @end

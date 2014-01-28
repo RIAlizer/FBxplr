@@ -13,6 +13,6 @@
 @interface Picture  : PictureCD
 
 
--(id)initWithDictionary:(NSDictionary*)dict;
+-(instancetype)initWithDictionary:(NSDictionary*)dict;
 
 @end

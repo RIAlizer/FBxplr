@@ -12,9 +12,9 @@
 
 
 
-@interface User : UserCD
+@interface User : UserCD <NSCopying>
 
 
--(id)initWithDictionary:(NSDictionary*)dict;
+-(instancetype)initWithDictionary:(NSDictionary*)dict;
 
 @end

@@ -21,9 +21,9 @@
 @synthesize username;
 @synthesize link;
 
+@synthesize last_update;
 
-
--(id)initWithDictionary:(NSDictionary*)dict
+-(instancetype)initWithDictionary:(NSDictionary*)dict
 {
     NSParameterAssert(IsEmpty(dict));
     
@@ -47,7 +47,26 @@
     }
     return self;
 }
-
+- (instancetype)copyWithZone:(NSZone *)zone
+{
+    id copy = [[[self class] alloc] init];
+    
+    if (copy) {
+         //[copy setMediaName:AUTORELEASE([self.mediaName copyWithZone:zone])];
+        [copy setUid:AUTORELEASE([self.uid copyWithZone:zone])];
+        [copy setName:AUTORELEASE([self.name copyWithZone:zone])];
+        [copy setFirst_name:AUTORELEASE([self.first_name copyWithZone:zone])];
+        [copy setFirst_name:AUTORELEASE([self.last_name copyWithZone:zone])];
+        [copy setUsername:AUTORELEASE([self.username copyWithZone:zone])];
+        [copy setMiddle_name:AUTORELEASE([self.middle_name copyWithZone:zone])];
+        [copy setLink:AUTORELEASE([self.link copyWithZone:zone])];
+        [copy setBirthday:AUTORELEASE([self.link copyWithZone:zone])];
+        
+        
+    }
+     return copy;
+    
+}
 
 
 @end

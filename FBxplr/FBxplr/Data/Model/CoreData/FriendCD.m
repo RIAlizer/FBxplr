@@ -19,5 +19,5 @@
 @dynamic name;
 @dynamic uid;
 @dynamic pictureFriend;
-
+@dynamic last_update;
 @end

@@ -15,5 +15,5 @@
 @property (nonatomic, retain) NSNumber * height;
 @property (nonatomic, retain) NSString * url;
 @property (nonatomic, retain) NSNumber * width;
-
+@property (nonatomic, retain) NSDate * last_update;
 @end

@@ -19,10 +19,11 @@
 @synthesize name;
 @synthesize uid;
 @synthesize pictureFriend;
- 
+
+@synthesize last_update;
 
 
--(id)initWithDictionary:(NSDictionary*)dict
+-(instancetype)initWithDictionary:(NSDictionary*)dict
 {
     NSParameterAssert(IsEmpty(dict));
     

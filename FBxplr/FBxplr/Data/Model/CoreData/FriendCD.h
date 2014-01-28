@@ -19,5 +19,5 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * uid;
 @property (nonatomic, retain) PictureCD *pictureFriend;
-
+@property (nonatomic, retain) NSDate * last_update;
 @end

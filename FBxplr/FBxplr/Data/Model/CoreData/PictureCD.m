@@ -14,5 +14,5 @@
 @dynamic height;
 @dynamic url;
 @dynamic width;
-
+@dynamic last_update;
 @end

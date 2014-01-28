@@ -19,5 +19,5 @@
 @dynamic username;
 @dynamic link;
 @dynamic birthday;
-
+@dynamic last_update;
 @end
