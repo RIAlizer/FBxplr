@@ -178,8 +178,8 @@
 // Handle possible errors that can occur during login
 - (void)loginView:(FBLoginView *)loginView handleError:(NSError *)error
 {
-    NSString *alertMessage;
-    NSString *alertTitle;
+    NSString *alertMessage = nil;
+    NSString *alertTitle = nil;
     
     // If the user should perform an action outside of you app to recover,
     // the SDK will provide a message for the user, you just need to surface it.
@@ -210,10 +210,14 @@
         alertMessage = @"Please try again later.";
         LogError(@"Unexpected error:%@", error);
     }
+    alertMessage = [FBErrorUtility userMessageForError:error];
+    if (!alertMessage)
+    {
+        alertMessage =@"FB Error";
+        alertMessage = [error localizedDescription];
+    }
     
-    if (alertMessage) {
-        
-        
+       
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:alertTitle
                                                             message:alertMessage
                                                            delegate:nil
@@ -221,7 +225,8 @@
                                                   otherButtonTitles:nil] ;
         [alertView show];
         RELEASE_OBJ(alertView);
-    }
+        
+    
 }
 
 #pragma mark Actions

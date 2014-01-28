@@ -30,6 +30,15 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(AppManager);
 -(void)setCurrentUser:(User *)currentUser
 {
     _currentUser = currentUser;
+    
+    UserCD * registeredUser = [[CoreDataManager sharedInstance] getUserWithUID:currentUser.uid];;
+    
+    if(registeredUser){
+        [[CoreDataManager sharedInstance] mapUser:_currentUser fromUserCD:registeredUser];
+    }
+    
+    
+
 }
 
 -(void)releaseResources

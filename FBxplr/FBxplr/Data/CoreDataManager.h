@@ -55,5 +55,6 @@
 
 -(BOOL)saveUser:(User*)user;
 -(UserCD*)getUserWithUID:(NSString*)uid;
-
+-(void)mapUser:(User*)user fromUserCD:(UserCD*)userCD;
+-(void)mapUserCD:(UserCD*)userCD fromUserCD:(User*)user;
 @end

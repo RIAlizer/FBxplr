@@ -7,7 +7,6 @@
 //
 
 #import "CoreDataManager.h"
-#import "ISO8601DateFormatter.h"
 
 
 @implementation CoreDataManager
@@ -292,6 +291,38 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(CoreDataManager);
     }
     
     return success;
+    
+}
+
+-(void)mapUser:(User*)user fromUserCD:(UserCD*)userCD
+{
+    //mapping
+    user.last_update = userCD.last_update;
+    user.uid = userCD.uid;
+    user.first_name = userCD.first_name;
+    user.username = userCD.username;
+    user.last_name = userCD.last_name;
+    user.name = userCD.name;
+    user.birthday = userCD.birthday;
+    user.middle_name = userCD.middle_name;
+    user.link = userCD.link;
+    
+}
+-(void)mapUserCD:(UserCD*)userCD fromUserCD:(User*)user
+{
+   
+    
+    //mapping
+    userCD.last_update = [NSDate date];
+    userCD.uid = user.uid;
+    userCD.first_name = user.first_name;
+    userCD.username = user.username;
+    userCD.last_name = user.last_name;
+    userCD.name = user.name;
+    userCD.birthday = user.birthday;
+    userCD.middle_name = user.middle_name;
+    userCD.link = user.link;
+    
     
 }
 
