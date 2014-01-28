@@ -10,7 +10,7 @@
 #import "BaseViewController.h"
 #import "FacebookSDK.h"
 #import "UIView+RoundCorners.h"
-#import <FlatUIKit.h>
+
 #import "User.h"
 #import "UserInfoViewController.h"
 

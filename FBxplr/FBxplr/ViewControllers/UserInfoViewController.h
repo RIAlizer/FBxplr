@@ -11,9 +11,9 @@
 #import "FacebookManager.h"
 #import "FriendTableCellView.h"
 
-@interface UserInfoViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate>
+@interface UserInfoViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 {
     
 }
-
+@property (MB_STRONG) IBOutlet UITableView * tableView;
 @end
