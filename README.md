@@ -1,9 +1,14 @@
 ###Facebook Explorer
 ----
+In order to compile the project open **FBxplr.xcworkspace**
+
 ### Dependencies
 Dependencies are managed using  [**CocoaPods**](http://www.cocoapods.org).  
 
-IN ORDER TO COMPILE SOURCES YOU MUST OPEN **FBxplr.xcworkspace</h4>**
+Run  <code>pod install</code> from bash to update dependencies.
+
+
+
 
 All these libraries are essential for advanced iOS development
 
@@ -39,7 +44,8 @@ All these libraries are essential for advanced iOS development
 ### Features
 * Universal App (iPhone/iPad) (TODO)
 * Facebook Login Auth
-* CoreData Integration (TODO)
-* Works automagically on ARC and non-ARC enviroment - more info [Utils/DevDefines.h](https://github.com/RIAlizer/FBxplr/blob/master/FBxplr/FBxplr/Utils/DevDefines.h)  
+* CoreData Integration (Easy Implementation)
+* FB Pop Animation Framework Integration (TODO) 
+* Works automagically on ARC and non-ARC enviroment - more info [Utils/DevDefines.h](https://github.com/RIAlizer/FBxplr/blob/master/FBxplr/FBxplr/Utils/DevDefines.h) (useful for backward compatibility) 
 	* Target FBxplr for non-ARC
 	* Target FBxplrARC is ARC enable (TODO)
