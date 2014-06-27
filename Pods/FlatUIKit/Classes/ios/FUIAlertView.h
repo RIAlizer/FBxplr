@@ -7,11 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FUITextField.h"
+
+typedef NS_ENUM(NSInteger, FUIAlertViewStyle) {
+    FUIAlertViewStyleDefault = 0,
+    FUIAlertViewStyleSecureTextInput,
+    FUIAlertViewStylePlainTextInput,
+    FUIAlertViewStyleLoginAndPasswordInput
+};
 
 @protocol FUIAlertViewDelegate;
 
 @interface FUIAlertView : UIView
-
 
 - (id)initWithTitle:(NSString *)title
             message:(NSString *)message
@@ -20,6 +27,14 @@
   otherButtonTitles:(NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION;
 
 @property(nonatomic,assign) id<FUIAlertViewDelegate> delegate;    // weak reference
+
+@property (nonatomic, copy) void(^onOkAction)(void); //called if dismissed with other button
+@property (nonatomic, copy) void(^onCancelAction)(void);//called if dismissed with cancel button
+@property (nonatomic, copy) void(^onDismissAction)(void);//called after onOkAction or onCancelAction. Useful if alert has more than 2 buttons
+
+@property (nonatomic, assign, readonly) NSInteger dismissButtonIndex;//index of button that was tapped to dismiss the alert
+
+
 @property(nonatomic,copy) NSString *title;
 @property(nonatomic,copy) NSString *message;   // secondary explanation text
 
@@ -30,10 +45,16 @@
 @property(nonatomic,readonly) NSInteger numberOfButtons;
 @property(nonatomic) NSInteger cancelButtonIndex;      // if the delegate does not implement -alertViewCancel:, we pretend this button was clicked on. default is -1
 
+//max height of the alert, if set
+@property(nonatomic) NSInteger maxHeight;
+
 // TODO: not implemented
 //@property(nonatomic,readonly) NSInteger firstOtherButtonIndex;	// -1 if no otherButtonTitles or initWithTitle:... not used
 
 @property(nonatomic,readonly,getter=isVisible) BOOL visible;
+
+// Flat Alert view style - defaults to FUIAlertViewStyleDefault
+@property(nonatomic,assign) FUIAlertViewStyle alertViewStyle;
 
 // shows popup alert animated.
 - (void)show;
@@ -44,19 +65,26 @@
 
 - (void)clickButtonAtIndex:(NSInteger)buttonIndex;
 
-@property(nonatomic) NSMutableArray *buttons;
+/* Retrieve a text field at an index - raises NSRangeException when textFieldIndex is out-of-bounds.
+ The field at index 0 will be the first text field (the single field or the login field), the field at index 1 will be the password field. */
+- (FUITextField *)textFieldAtIndex:(NSInteger)textFieldIndex;
+
+@property(nonatomic, strong) NSMutableArray *buttons;
 @property(nonatomic, weak, readonly) UILabel *titleLabel;
 @property(nonatomic, weak, readonly) UILabel *messageLabel;
 @property(nonatomic, weak, readonly) UIView *backgroundOverlay;
 @property(nonatomic, weak, readonly) UIView *alertContainer;
-@property(nonatomic) CGFloat buttonSpacing;
-@property(nonatomic) CGFloat animationDuration;
+@property(nonatomic) CGFloat buttonSpacing UI_APPEARANCE_SELECTOR;
+@property(nonatomic) CGFloat animationDuration UI_APPEARANCE_SELECTOR;
+@property(nonatomic) BOOL hasCancelButton;
 
 //setting these properties overwrites any other button colors/fonts that have already been set
-@property(nonatomic, strong) UIFont *defaultButtonFont;
-@property(nonatomic, strong) UIColor *defaultButtonTitleColor;
-@property(nonatomic, strong) UIColor *defaultButtonColor;
-@property(nonatomic, strong) UIColor *defaultButtonShadowColor;
+@property(nonatomic, strong) UIFont *defaultButtonFont UI_APPEARANCE_SELECTOR;
+@property(nonatomic, strong) UIColor *defaultButtonTitleColor UI_APPEARANCE_SELECTOR;
+@property(nonatomic, strong) UIColor *defaultButtonColor UI_APPEARANCE_SELECTOR;
+@property(nonatomic, strong) UIColor *defaultButtonShadowColor UI_APPEARANCE_SELECTOR;
+@property(nonatomic, readwrite) CGFloat defaultButtonCornerRadius UI_APPEARANCE_SELECTOR;
+@property(nonatomic, readwrite) CGFloat defaultButtonShadowHeight UI_APPEARANCE_SELECTOR;
 
 @end
 

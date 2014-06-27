@@ -1,8 +1,8 @@
 //
 //  TPKeyboardAvoidingCollectionView.m
 //
-//  Created by Tony Arnold on 4/08/2013.
-//  Copyright 2013 The CocoaBots. All rights reserved.
+//  Created by Michael Tyson on 30/09/2013.
+//  Copyright 2013 A Tasty Pixel & The CocoaBots. All rights reserved.
 //
 
 #import "TPKeyboardAvoidingCollectionView.h"
@@ -84,7 +84,8 @@
 
 -(void)layoutSubviews {
     [super layoutSubviews];
-    [self TPKeyboardAvoiding_assignTextDelegateForViewsBeneathView:self];
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(TPKeyboardAvoiding_assignTextDelegateForViewsBeneathView:) object:self];
+    [self performSelector:@selector(TPKeyboardAvoiding_assignTextDelegateForViewsBeneathView:) withObject:self afterDelay:0.1];
 }
 
 @end

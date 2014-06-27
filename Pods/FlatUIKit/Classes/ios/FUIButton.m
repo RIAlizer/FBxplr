@@ -17,8 +17,7 @@
 
 @implementation FUIButton
 
-- (id)initWithFrame:(CGRect)frame
-{
+- (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         self.defaultEdgeInsets = self.titleEdgeInsets;
@@ -26,8 +25,15 @@
     return self;
 }
 
+- (void) setTitleEdgeInsets:(UIEdgeInsets)titleEdgeInsets {
+    [super setTitleEdgeInsets:titleEdgeInsets];
+    self.defaultEdgeInsets = titleEdgeInsets;
+    [self setShadowHeight:self.shadowHeight];
+}
+
 - (void) setHighlighted:(BOOL)highlighted {
-    self.titleEdgeInsets = highlighted ? self.highlightedEdgeInsets : self.normalEdgeInsets;
+    UIEdgeInsets insets = highlighted ? self.highlightedEdgeInsets : self.normalEdgeInsets;
+    [super setTitleEdgeInsets:insets];
     [super setHighlighted:highlighted];
 }
 
@@ -46,13 +52,29 @@
     [self configureFlatButton];
 }
 
+- (void) setHighlightedColor:(UIColor *)highlightedColor {
+    _highlightedColor = highlightedColor;
+    [self configureFlatButton];
+}
+
+- (void) setDisabledColor:(UIColor *)disabledColor {
+    _disabledColor = disabledColor;
+    [self configureFlatButton];
+}
+
+- (void) setDisabledShadowColor:(UIColor *)disabledShadowColor {
+    _disabledShadowColor = disabledShadowColor;
+    [self configureFlatButton];
+}
+
 - (void) setShadowHeight:(CGFloat)shadowHeight {
     _shadowHeight = shadowHeight;
     UIEdgeInsets insets = self.defaultEdgeInsets;
+    insets.top += shadowHeight;
     self.highlightedEdgeInsets = insets;
-    insets.top -= shadowHeight;
+    insets.top -= shadowHeight * 2.0f;
     self.normalEdgeInsets = insets;
-    self.titleEdgeInsets = insets;
+    [super setTitleEdgeInsets:insets];
     [self configureFlatButton];
 }
 
@@ -61,14 +83,24 @@
                                                       cornerRadius:self.cornerRadius
                                                        shadowColor:self.shadowColor
                                                       shadowInsets:UIEdgeInsetsMake(0, 0, self.shadowHeight, 0)];
-    UIImage *highlightedBackgroundImage = [UIImage buttonImageWithColor:self.buttonColor
+
+    UIColor *highlightedColor = self.highlightedColor == nil ? self.buttonColor : self.highlightedColor;
+    UIImage *highlightedBackgroundImage = [UIImage buttonImageWithColor:highlightedColor
                                                            cornerRadius:self.cornerRadius
                                                             shadowColor:[UIColor clearColor]
                                                            shadowInsets:UIEdgeInsetsMake(self.shadowHeight, 0, 0, 0)];
-    
+
+    if (self.disabledColor) {
+        UIColor *disabledShadowColor = self.disabledShadowColor == nil ? self.shadowColor : self.disabledShadowColor;
+        UIImage *disabledBackgroundImage = [UIImage buttonImageWithColor:self.disabledColor
+                                                            cornerRadius:self.cornerRadius
+                                                             shadowColor:disabledShadowColor
+                                                            shadowInsets:UIEdgeInsetsMake(0, 0, self.shadowHeight, 0)];
+        [self setBackgroundImage:disabledBackgroundImage forState:UIControlStateDisabled];
+    }
+
     [self setBackgroundImage:normalBackgroundImage forState:UIControlStateNormal];
     [self setBackgroundImage:highlightedBackgroundImage forState:UIControlStateHighlighted];
-    
 }
 
 @end

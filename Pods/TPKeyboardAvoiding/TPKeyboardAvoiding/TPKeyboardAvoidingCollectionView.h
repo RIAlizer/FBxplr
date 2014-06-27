@@ -1,14 +1,14 @@
 //
 //  TPKeyboardAvoidingCollectionView.h
 //
-//  Created by Tony Arnold on 4/08/2013.
-//  Copyright 2013 The CocoaBots. All rights reserved.
+//  Created by Michael Tyson on 30/09/2013.
+//  Copyright 2013 A Tasty Pixel & The CocoaBots. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "UIScrollView+TPKeyboardAvoidingAdditions.h"
 
-@interface TPKeyboardAvoidingCollectionView : UICollectionView
+@interface TPKeyboardAvoidingCollectionView : UICollectionView <UITextFieldDelegate, UITextViewDelegate>
 - (BOOL)focusNextTextField;
 - (void)scrollToActiveTextField;
 @end
